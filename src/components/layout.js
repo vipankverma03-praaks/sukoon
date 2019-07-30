@@ -128,7 +128,7 @@ function Layout({ children }) {
         }
       `}
       render={data => (
-        <div className="flex flex-col font-sans min-h-screen text-gray-900">
+        <div className="flex flex-col min-h-screen text-gray-900">
           <Header siteTitle={data.site.siteMetadata.title} />
 
           <main className="flex flex-col flex-1 md:justify-center max-w-4xl mx-auto md:p-8 w-full">
