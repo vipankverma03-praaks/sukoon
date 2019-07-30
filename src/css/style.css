@@ -1,3 +1,27 @@
+body h1{
+    font-weight: 800;
+    line-height: normal;
+}
+body h1 span {
+    font-weight: 300;
+    line-height: normal;
+}
+body h2 {
+    font-weight: 700;
+    line-height: normal;
+}
+body h3 {
+    font-weight: 600;
+    line-height: normal;
+}
+body h4 {
+    font-weight: 500;
+    line-height: normal;
+}
+body p{
+    font-weight: 400;
+    line-height: normal;
+}
 /**
  * This injects Tailwind's base styles, which is a combination of
  * Normalize.css and some additional base styles.
@@ -115,4 +139,31 @@ input{
 }
 .hide{
     display: none;
+}
+/* Summary tag arrow customization*/
+.facilities summary {
+    outline: none;
+    font-size: 1.15em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.facilities summary::-webkit-details-marker {
+    display: none;
+}
+
+.facilities summary:after {
+    content: "+";
+    color: #12443e;
+    float: right;
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 10px;
+}
+
+.facilities details[open] summary:after {
+    content: "-";
 }
