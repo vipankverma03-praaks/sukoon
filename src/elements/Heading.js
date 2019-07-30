@@ -7,31 +7,29 @@ const Title = (props) =>{
     
  `
 
-const Explore = styled.div`
+    const SubheadTop = styled.div`
     border-left: 3px solid #ffc300;
     color: #12443d;
     padding-left: 8px;
 `
 
-const HeadingWrapper = styled.div`
+    const HeadingWrapper = styled.h2`
     
-`
-const HeadingLight = styled.span`
-     display: ${props => props.display || 'inline'};
-`
-const HeadingBold = styled.span`
-     display: ${props => props.display || 'inline'};
-`
+`;
+    const HeadingLight = styled.span`
+     display: ${props => props.display || 'inline-block'};
+`;
+
 
     return(
         <Wrapper className={props.wrapperClass}>
-            <Explore>Explore</Explore>
+            <SubheadTop>{props.subHeading || 'Explore'}</SubheadTop>
             <HeadingWrapper className="text-sukoon inline text-4xl w-full">
                 <HeadingLight className="font-light mr-2" display={props.display}>{props.titleLight || ''}</HeadingLight>
-                <HeadingBold className="font-semibold" display={props.display}>{props.titleBold || ''}</HeadingBold>
+                {props.titleBold}
             </HeadingWrapper>
         </Wrapper>
     )
-}
+};
 
 export default Title;
