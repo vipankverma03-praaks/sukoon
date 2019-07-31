@@ -23,7 +23,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-purgecss",
       options: {
-        tailwind: false,
+        tailwind: true,
+        ignore:["node_modules/slick-carousel/slick/slick-theme.css", "node_modules/slick-carousel/slick/slick.css"],
         purgeOnly: [""]
       }
     }
