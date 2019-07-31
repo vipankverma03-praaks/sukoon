@@ -16,6 +16,7 @@ module.exports = {
       white: '#fff',
       sukoon: '#12443e',
       sukoonYellow: '#ffc300',
+      para: '#636363',
       gray: {
         100: '#f7fafc',
         200: '#edf2f7',
@@ -293,12 +294,12 @@ module.exports = {
       widest: '0.1em',
     },
     lineHeight: {
-      none: '1',
-      tight: '1.25',
-      snug: '1.375',
-      normal: '1.5',
-      relaxed: '1.625',
-      loose: '2',
+      none: 'normal',
+      tight: '1.25rem',
+      snug: '1.375rem',
+      normal: '1.5rem',
+      relaxed: '1.625rem',
+      loose: '2rem',
     },
     listStyleType: {
       none: 'none',

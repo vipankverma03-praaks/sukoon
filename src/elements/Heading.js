@@ -1,37 +1,36 @@
 import React from "react";
 import styled from "styled-components";
 
-const Title = (props) =>{
+const Title = (props) => {
 
- const Wrapper = styled.div`
+    const Wrapper = styled.div`
     
- `
-
-const Explore = styled.div`
+    `;
+    const SubheadTop = styled.div`
     border-left: 3px solid #ffc300;
     color: #12443d;
     padding-left: 8px;
-`
+    `;
 
-const HeadingWrapper = styled.div`
-    
-`
-const HeadingLight = styled.span`
-     display: ${props => props.display || 'inline'};
-`
-const HeadingBold = styled.span`
-     display: ${props => props.display || 'inline'};
-`
+    const HeadingWrapper = styled.h2`
+            
+    `;
 
-    return(
+    const HeadingLight = styled.span`
+      line-height: 1;
+     display: ${props => props.display || 'inline-block'};
+    `;
+
+    return (
         <Wrapper className={props.wrapperClass}>
-            <Explore>Explore</Explore>
-            <HeadingWrapper className="text-sukoon inline text-4xl w-full">
-                <HeadingLight className="font-light mr-2" display={props.display}>{props.titleLight || ''}</HeadingLight>
-                <HeadingBold className="font-semibold" display={props.display}>{props.titleBold || ''}</HeadingBold>
+            <SubheadTop>{props.subHeading || 'Explore'}</SubheadTop>
+            <HeadingWrapper className="text-sukoon text-4xl w-full mt-4 block">
+                <HeadingLight className="font-light mr-2"
+                              display={props.display}>{props.titleLight || ''}</HeadingLight>
+                {props.titleBold}
             </HeadingWrapper>
         </Wrapper>
     )
-}
+};
 
 export default Title;
