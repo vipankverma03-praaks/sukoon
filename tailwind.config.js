@@ -16,6 +16,7 @@ module.exports = {
       white: '#fff',
       sukoon: '#12443e',
       sukoonYellow: '#ffc300',
+      para: '#636363',
       gray: {
         100: '#f7fafc',
         200: '#edf2f7',
