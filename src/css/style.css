@@ -135,28 +135,6 @@ body{
  */
 
 
-.slick-center {
-    z-index: 3;
-    position: relative;
-    padding: 1rem 0;
-    margin-bottom: 1rem;
-    transform: scale(1.08);
-    height: 23vw;
-}
-
-.slick-center .ovarlay {
-    display: none;
-}
-body .slick-center h2, body .slick-center  p{
-    display: inline-block;
-}
-.slick-center .CarouselImgWrapper img {
-    margin: 0;
-    background: rgba(0, 0, 0, 0.61);
-    opacity: 1;
-    padding: 7px;
-}
-
 #menu-hamburger-icon::before{
     top: 24px;
     left:12px;

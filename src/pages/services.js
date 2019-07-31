@@ -84,7 +84,7 @@ const Ovarlay = styled.div`
 
 const MeetExpertsCarousel = () =>{
     const settings = {
-        slidesToScroll: 5,
+        slidesToScroll: 1,
         arrow:true,
         className: "center",
         centerMode: true,
@@ -151,14 +151,37 @@ const MeetExpertsCarousel = () =>{
     )
 };
 
+const MeetExpertsWrapper = styled.section`
+  .slick-center {
+    z-index: 3;
+    position: relative;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    transform: scale(1.08);
+  }
+
+    .slick-center .ovarlay {
+        display: none;
+    }
+    .slick-center h2, .slick-center  p{
+        display: inline-block;
+    }
+    .slick-center .CarouselImgWrapper img {
+        margin: 0;
+        background: rgba(0, 0, 0, 0.61);
+        opacity: 1;
+        padding: 7px;
+    }
+`;
+
 const MeetExperts = (props) => {
     return (
-        <section id="meet-experts" className="p-6 relative">
+        <MeetExpertsWrapper id="meet-experts" className="p-6 relative">
             <Title titleLight="Meet" titleBold="Experts"/>
             <Para width="100%" content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                 industry's standard dummy text ever since the 1500s" />
             <MeetExpertsCarousel />
-        </section>
+        </MeetExpertsWrapper>
     )
 };
 
@@ -186,7 +209,7 @@ function Services() {
                     <ul className="patient_services_nav flex overflow-x-scroll">
                         <li className="mr-3 mt-3">
                             <button
-                                class="bg-white text-sm hover:bg-gray-100 text-gray-800 font-medium py-2 px-2 w-48 text-left">Acute
+                                className="bg-white text-sm hover:bg-gray-100 text-gray-800 font-medium py-2 px-2 w-48 text-left">Acute
                                 Psychiatry Care Intensive Care Unit
                             </button>
                         </li>
