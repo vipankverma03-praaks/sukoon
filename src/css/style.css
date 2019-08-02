@@ -142,11 +142,11 @@ input{
 }
 /* Summary tag arrow customization*/
 .facilities summary {
-    outline: none;
+
     font-size: 1.15em;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    outline: none
 }
 
 .facilities summary::-webkit-details-marker {
@@ -157,11 +157,17 @@ input{
     content: "+";
     color: #12443e;
     float: right;
-    font-size: 2em;
+    font-size: 35px;
     margin: 0;
     padding: 0;
     text-align: center;
-    line-height: 10px;
+    line-height: 25px;
+}
+
+.facilities details {
+    border: 1px solid #969696;
+    padding: 5px 10px;
+    border-radius: 4px;
 }
 
 .facilities details[open] summary:after {
