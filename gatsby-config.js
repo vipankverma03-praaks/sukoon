@@ -11,7 +11,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Sukoon`,
-        short_name: `starter`,
+        short_name: `Psychiatry Center`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#b7e2c9`,
@@ -19,6 +19,7 @@ module.exports = {
         icon: `src/images/tailwind-icon.png`
       }
     },
+    `gatsby-plugin-offline`,
     `gatsby-plugin-postcss`,
     {
       resolve: "gatsby-plugin-purgecss",
