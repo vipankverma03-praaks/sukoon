@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
 import {StaticQuery, graphql, Link} from "gatsby";
 
@@ -141,11 +141,11 @@ const FollowUs = (props) =>{
     cursor: pointer;    
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    `
+    `;
     return(
         <div className="p-6">
-            <h1 className="text-sukoon text-xl mb-2">Follow us on :-</h1>
-            <div className="text-lg mr-2 flex justify-between break-words">
+            <h2 className="text-sukoon text-xl mb-2">Follow us on :-</h2>
+            <div className="text-sm mr-2 flex justify-between break-words">
                 <a href="/" className="mr-2 text-blue-800 cursor-pointer">Facebook</a>
                 <a href="/" className="mr-2 text-blue-400 cursor-pointer">Twitter</a>
                 <Instagram href="/">Instagram</Instagram>
@@ -161,10 +161,13 @@ const CopyRight = (props) =>{
             <span className="text-white text-xs">Copyright © 2019 - All Rights Reserved - Design By Praaks</span>
         </div>
     )
-}
+};
 
 
 function Layout({ children }) {
+
+    const [isExpanded, toggleMenu] = useState(false);
+
   return (
     <StaticQuery
       query={graphql`
@@ -177,8 +180,11 @@ function Layout({ children }) {
         }
       `}
       render={data => (
-        <div className="flex flex-col min-h-screen text-gray-900">
-          <Header siteTitle={data.site.siteMetadata.title} />
+        <div className={`${
+            isExpanded ? `menu-open` : `flex `
+            } flex-col min-h-screen text-gray-900`}
+        >
+          <Header toggleMenu={toggleMenu} siteTitle={data.site.siteMetadata.title} />
 
           <main className="flex flex-col flex-1 md:justify-center max-w-4xl mx-auto md:p-8 w-full">
             {children}
