@@ -11,7 +11,7 @@ module.exports = {
     },
     colors: {
       transparent: 'transparent',
-
+      menuBg: '#ceefdb',
       black: '#000',
       white: '#fff',
       sukoon: '#12443e',
