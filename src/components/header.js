@@ -55,7 +55,7 @@ function Header(props) {
                     </div>
                     <button onClick={() => { toggleExpansion(!isExpanded); props.toggleMenu(!isExpanded);}} className="text-sukoon outline-none mr-4 text-3xl">X</button>
                 </div>
-                <MenuLinkWrapper className="flex flex-col justify-between">
+                <MenuLinkWrapper className="flex flex-col">
                     <div className="text-lg ml-6 text-sukoon flex flex-col">
                         <Link
                             to="/"
@@ -71,7 +71,7 @@ function Header(props) {
                         </Link>
 
                         <Link
-                            to="/contact"
+                            to="/infrastructure"
                             className="inline-block mt-4 mt-0 mr-6 no-underline"
                         >
                             Infrastructure
@@ -113,14 +113,14 @@ function Header(props) {
                             Contact
                         </Link>
                     </div>
-                    <div className="ml-6">
-                        <div className="mb-4">
+                    <div className="mt-6 flex justify-around">
+                        <div className="">
                             <img src={Call} className="w-4 inline-block" alt="Contact Sukoon"/>
-                            <span className="ml-4">+91 9876543210</span>
+                            <span className="ml-2">+91 9876543210</span>
                         </div>
-                        <div className="mb-6">
+                        <div className="">
                             <img src={Call} className="w-4 inline-block" alt="Contact Sukoon"/>
-                            <span className="ml-4">+91 9876543210</span>
+                            <span className="ml-2">+91 9876543210</span>
                         </div>
                     </div>
                 </MenuLinkWrapper>

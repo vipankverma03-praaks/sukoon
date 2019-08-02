@@ -7,10 +7,11 @@ const Para = (props) =>{
         width: ${props.width || '100%'};
         padding: ${props.padding || ''};
         text-align: ${props => props.textAlign || 'left'};
-    `
+        hyphens: manual;
+    `;
 
     return(
-        <Paragraph width={props.width} padding={props.padding} textAlign={props.textAlign} className="text-para my-1 text-vlg block">
+        <Paragraph width={props.width} padding={props.padding} textAlign={props.textAlign} className={`${props.wrapperClass} text-para my-1 text-vlg block`}>
             {props.children || props.content}
         </Paragraph>
     )
