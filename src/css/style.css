@@ -9,10 +9,12 @@ body h1 span {
 body h2 {
     font-weight: 700;
     line-height: normal;
+    font-size: 6vw;
 }
 body h3 {
     font-weight: 600;
     line-height: normal;
+    font-size: 5vw;
 }
 body h4 {
     font-weight: 500;
@@ -21,6 +23,7 @@ body h4 {
 body p{
     font-weight: 400;
     line-height: normal;
+    text-align: justify;
 }
 
 body{
@@ -219,14 +222,73 @@ input{
     padding: 0;
     text-align: center;
     line-height: 25px;
+    margin-top: 4px;
 }
 
 .facilities details {
     border: 1px solid #969696;
-    padding: 5px 10px;
+    padding: 10px;
     border-radius: 4px;
 }
 
 .facilities details[open] summary:after {
     content: "-";
+}
+
+
+
+
+.facilities.Exp img {
+    margin-top: 0.75rem;
+    max-height: 245px;
+    width: 100%;
+    object-fit: cover;
+}
+.facilities.Exp ul.roomFeatures li{
+    min-width: 65px;
+    text-align: center;
+}
+.facilities.Perfloor.px-5.my-5 details {
+    border: none;
+    padding: 0px;
+}
+
+.highlight {
+    background: white;
+    margin-top: 75px;
+    margin-bottom: -65px;
+    padding: 25px;
+    box-shadow: 0px 6px 10px #00000024;
+}
+.highlight span {
+    font-size: 3.8vw;
+    font-weight: 600;
+}
+button.globe_btn {
+    border: 1px solid #12443e;
+    margin: 0 0 0 auto;
+}
+button.globe_btn a {
+    background: #12443e;
+    padding: 10px 26px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin: 4px;
+    font-size: 4vw;
+    line-height: normal;
+}
+
+.facOneSec .details{
+    background:white;
+    padding:25px;
+    margin:-40px 15px -40px 15px;
+    box-shadow: 0px 6px 10px #00000024;
+}
+
+.facSecSec .details{
+    background:white;
+    padding:25px;
+    margin:-40px 15px 40px 15px;
+    box-shadow: 0px 6px 10px #00000024;
 }
