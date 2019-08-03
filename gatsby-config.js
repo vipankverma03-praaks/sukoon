@@ -11,19 +11,21 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Sukoon`,
-        short_name: `starter`,
+        short_name: `Psychiatry Center`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#4dc0b5`,
+        theme_color: `#b7e2c9`,
         display: `minimal-ui`,
         icon: `src/images/tailwind-icon.png`
       }
     },
+    `gatsby-plugin-offline`,
     `gatsby-plugin-postcss`,
     {
       resolve: "gatsby-plugin-purgecss",
       options: {
-        tailwind: false,
+        tailwind: true,
+        ignore:["node_modules/slick-carousel/slick/slick-theme.css", "node_modules/slick-carousel/slick/slick.css"],
         purgeOnly: [""]
       }
     }

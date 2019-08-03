@@ -1,6 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
 import {StaticQuery, graphql, Link} from "gatsby";
+
+import styled from "styled-components";
+import Para from "../elements/Para";
+import HelpIcon from "../images/helpline/helpline copy 2@2x.jpg"
+import CallIcon from "../images/icons/phone.svg";
+import MailIcon from "../images/icons/mail.svg";
 
 import Header from "./header";
 
@@ -45,17 +51,6 @@ const HeaderIntro = () => {
             </div>
         </section>
     )
-};
-
-const ReachUs = (props) =>{
-  return(
-      <div className="p-6">
-          <span className="text-sukoon text-4xl font-semibold">Reach Us</span>
-          <p className="text-gray-800">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.
-          </p>
-      </div>
-  )
 };
 
 const QuickLinks = (props) =>{
@@ -114,8 +109,65 @@ const Subscribe = (props) =>{
     )
 }
 
+const ReachUs = (props) =>{
+    return(
+        <div className="p-6">
+            <span className="text-sukoon text-4xl font-semibold">Reach Us</span>
+            <Para className="text-gray-800">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.
+            </Para>
+            <div className="my-2 flex flex-wrap">
+                <div className="text-sukoon mr-2 my-2 flex px-1">
+                    <div className="fit"><img src={HelpIcon} className="w-6" alt="Help Icon"/></div>
+                    <span className="ml-4">1800 123 6789</span>
+                </div>
+                <div className="text-sukoon mr-2 my-2 flex px-1">
+                    <div className="fit"><img src={CallIcon} className="w-6" alt="Help Icon"/></div>
+                    <span className="ml-4">1800 123 6789</span>
+                </div>
+                <div className="text-sukoon mr-2 my-2 flex px-1">
+                    <div className="fit"><img src={MailIcon} className="w-6" alt="Help Icon"/></div>
+                    <span className="ml-4">1800 123 6789</span>
+                </div>
+            </div>
+        </div>
+    )
+};
+
+const FollowUs = (props) =>{
+    const Instagram = styled.a`
+    background: linear-gradient(to right, #f8ec35, #cf2e8d 67%, #1b31f0);
+    margin-right: 1.5rem;
+    cursor: pointer;    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    `;
+    return(
+        <div className="p-6">
+            <h2 className="text-sukoon text-xl mb-2">Follow us on :-</h2>
+            <div className="text-sm mr-2 flex justify-between break-words">
+                <a href="/" className="mr-2 text-blue-800 cursor-pointer">Facebook</a>
+                <a href="/" className="mr-2 text-blue-400 cursor-pointer">Twitter</a>
+                <Instagram href="/">Instagram</Instagram>
+                <a href="/" className="mr-2 text-blue-600 cursor-pointer">Skype</a>
+            </div>
+        </div>
+    )
+};
+
+const CopyRight = (props) =>{
+    return(
+        <div className="py-2 px-6 bg-sukoon text-center break-words">
+            <span className="text-white text-xs">Copyright © 2019 - All Rights Reserved - Design By Praaks</span>
+        </div>
+    )
+};
+
 
 function Layout({ children }) {
+
+    const [isExpanded, toggleMenu] = useState(false);
+
   return (
     <StaticQuery
       query={graphql`
@@ -128,8 +180,11 @@ function Layout({ children }) {
         }
       `}
       render={data => (
-        <div className="flex flex-col min-h-screen text-gray-900">
-          <Header siteTitle={data.site.siteMetadata.title} />
+        <div className={`${
+            isExpanded ? `menu-open` : `flex `
+            } flex-col min-h-screen text-gray-900`}
+        >
+          <Header toggleMenu={toggleMenu} siteTitle={data.site.siteMetadata.title} />
 
           <main className="flex flex-col flex-1 md:justify-center max-w-4xl mx-auto md:p-8 w-full">
             {children}
@@ -139,6 +194,9 @@ function Layout({ children }) {
             <HeaderIntro/>
             <Subscribe/>
             <QuickLinks/>
+            <ReachUs/>
+            <FollowUs/>
+            <CopyRight/>
           </footer>
         </div>
       )}

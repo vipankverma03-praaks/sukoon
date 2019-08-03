@@ -22,6 +22,55 @@ body p{
     font-weight: 400;
     line-height: normal;
 }
+
+body{
+    font-family: gilroy-regular;
+}
+
+/*Fonts */
+@font-face {
+    font-family: gilroy-regular;
+    src: url(../../static/fonts/Gilroy-Regular.ttf);
+}
+
+@font-face {
+    font-family: gilroy-bold;
+    src: url(../../static/fonts/Gilroy-Bold.ttf);
+}
+@font-face {
+    font-family: gilroy-light;
+    src: url(../../static/fonts/Gilroy-Light.ttf);
+}
+@font-face {
+    font-family: gilroy-thin;
+    src: url(../../static/fonts/Gilroy-Thin.ttf);
+}
+@font-face {
+    font-family: gilroy-black;
+    src: url(../../static/fonts/Gilroy-Black.ttf);
+}
+@font-face {
+    font-family: gilroy-extraBold;
+    src: url(../../static/fonts/Gilroy-ExtraBold.ttf);
+}
+@font-face {
+    font-family: gilroy-heavy;
+    src: url(../../static/fonts/Gilroy-Heavy.ttf);
+}
+
+@font-face {
+    font-family: gilroy-medium;
+    src: url(../../static/fonts/Gilroy-Medium.ttf);
+}
+@font-face {
+    font-family: gilroy-semiBold;
+    src: url(../../static/fonts/Gilroy-SemiBold.ttf);
+}
+@font-face {
+    font-family: gilroy-ultraLight;
+    src: url(../../static/fonts/Gilroy-UltraLight.ttf);
+}
+
 /**
  * This injects Tailwind's base styles, which is a combination of
  * Normalize.css and some additional base styles.
@@ -85,6 +134,7 @@ body p{
  * @import "utilities/skew-transforms";
  */
 
+
 #menu-hamburger-icon::before{
     top: 24px;
     left:12px;
@@ -109,6 +159,13 @@ body p{
     height: 100%;
     background-image: url("../../static/mobile_header.jpg");
     background-position: 29%;
+}
+
+.menu-open{
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+
 }
 .card-container{
     background-image: url("../../static/green-leaves-waterdrops-4k-wallpaper-3840x2400@3x.jpg");

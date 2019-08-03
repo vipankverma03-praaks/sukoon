@@ -11,11 +11,12 @@ module.exports = {
     },
     colors: {
       transparent: 'transparent',
-
+      menuBg: '#ceefdb',
       black: '#000',
       white: '#fff',
       sukoon: '#12443e',
       sukoonYellow: '#ffc300',
+      para: '#636363',
       gray: {
         100: '#f7fafc',
         200: '#edf2f7',
