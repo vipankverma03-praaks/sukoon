@@ -1,5 +1,5 @@
 import React from "react";
-
+import {Link} from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Title from "../elements/Heading";
@@ -7,7 +7,7 @@ import styled from "styled-components";
 import Image from "../../static/service_bg.jpg";
 import RoomImg from "../images/exp/room.jpg";
 import FloorAct from "../images/exp/party.jpg";
-import Therapy from "../images/exp/BG_2.jpg";
+import Therapy from "../images/exp/bg_2.jpg";
 import Highlight from "../images/exp/bg.jpg";
 import FacOneBg from "../images/exp/room_dining.jpg";
 import FacOneBgSec from "../images/exp/room_spa.jpg";
@@ -68,7 +68,7 @@ const FacSec = styled.div`
 `;
 
 
-function Expreince() {
+function Experience() {
     return (
         <Layout>
             <SEO
@@ -162,7 +162,7 @@ function Expreince() {
                         <Para>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Para>
                     </div>
                 </details>
-              <button className="globe_btn enquiry block"><a>Enquiry</a></button>
+              <button className="globe_btn enquiry block"><Link to="/">Enquiry</Link></button>
             </div>
             <HighlightSection className="highlightSection px-5 py-5 mt-5">
                 <div className="highlight">
@@ -171,7 +171,6 @@ function Expreince() {
                     <Para>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </Para>
                 </div>
             </HighlightSection>
-
             <div className="px-5 my-5 mt-20">
                 <span>ClinicaL Programs</span>
                 <div className="">

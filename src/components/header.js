@@ -77,10 +77,10 @@ function Header(props) {
                             Infrastructure
                         </Link>
                         <Link
-                            to="/"
+                            to="/experience"
                             className="inline-block mt-4 mt-0 mr-6 no-underline"
                         >
-                            Amenities
+                            Experience
                         </Link>
                         <Link
                             to="/"
