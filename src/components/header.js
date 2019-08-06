@@ -14,34 +14,56 @@ const Nav = styled.nav`
   z-index: 1001;
 `;
 
+const Menu = styled.span`
+    
+  &::before{
+    top: 18px;
+    left:12px;
+    position: absolute;
+    content: '';
+    background: #12443e;
+    width: 32px;
+    height: 1px;
+  }
+  
+  &::after{
+    left: 12px;
+    top: 22px;
+    position: absolute;
+    content: '';
+    background: #12443e;
+    width: 32px;
+    height: 1px;
+  }
+`;
+
 function Header(props) {
     const [isExpanded, toggleExpansion] = useState(false);
 
     return (
-        <Nav className={`${ isExpanded ? `absolute inset-0` : ``}`}>
+        <Nav className={`${ isExpanded ? `` : ``}`}>
             <div className={`${
                 isExpanded ? `hidden` : `flex`
-                } flex-wrap items-center justify-between mx-auto p-4`}
+                } flex-wrap items-center justify-between mx-auto p-2`}
             >
-                <div className="w-12">
+                <div className="w-8">
                     <Link to="/" className="flex items-center no-underline ">
                         <img src={SukoonLogo} alt="Sukoon Logo"/>
                     </Link>
                 </div>
                 <div className="flex">
                     <button
-                        className="block relative outline-none flex items-center py-2 px-4 mr-2 bg-sukoon text-white">
-                        <span className="text-sm font-bold">Book Appointment</span>
+                        className="block text-xs font-gilroyMedium relative outline-none flex items-center py-1 px-2 mr-2 bg-sukoon text-white">
+                        Book Appointment
                     </button>
                     <button
                         className="block relative outline-none flex items-center px-3 pb-2 rounded text-sukoon"
                         onClick={() => {toggleExpansion(!isExpanded);
                                                 props.toggleMenu(!isExpanded);}}>
-                        <span id="menu-hamburger-icon" className="text-sm font-bold">MENU</span>
+                        <Menu id="menu-hamburger-icon" className="text-xs font-bold">MENU</Menu>
                     </button>
                 </div>
             </div>
-
             <div
                 className={`${
                     isExpanded ? `block` : `hidden`
@@ -57,12 +79,6 @@ function Header(props) {
                 </div>
                 <MenuLinkWrapper className="flex flex-col">
                     <div className="text-lg ml-6 text-sukoon flex flex-col">
-                        <Link
-                            to="/"
-                            className="mt-4 inline-block mt-0 mr-6 no-underline"
-                        >
-                            Home
-                        </Link>
                         <Link
                             to="/services"
                             className="inline-block mt-4 mt-0 mr-6 no-underline"
@@ -124,7 +140,6 @@ function Header(props) {
                         </div>
                     </div>
                 </MenuLinkWrapper>
-
             </div>
         </Nav>
     );

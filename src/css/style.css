@@ -138,40 +138,11 @@ body{
  */
 
 
-#menu-hamburger-icon::before{
-    top: 24px;
-    left:12px;
-    position: absolute;
-    content: '';
-    background: #12443e;
-    width: 32px;
-    height: 1px;
-
-}
-#menu-hamburger-icon::after{
-    left: 12px;
-    top: 28px;
-    position: absolute;
-    content: '';
-    background: #12443e;
-    width: 22px;
-    height: 1px;
-
-}
-#header-intro{
-    height: 100%;
-    background-image: url("../../static/mobile_header.jpg");
-    background-position: 29%;
-}
-
 .menu-open{
     position: relative;
     overflow: hidden;
     height: 100vh;
 
-}
-.card-container{
-    background-image: url("../../static/green-leaves-waterdrops-4k-wallpaper-3840x2400@3x.jpg");
 }
 
 .appointment-type{
@@ -202,7 +173,6 @@ input{
 }
 /* Summary tag arrow customization*/
 .facilities summary {
-
     font-size: 1.15em;
     display: flex;
     justify-content: space-between;

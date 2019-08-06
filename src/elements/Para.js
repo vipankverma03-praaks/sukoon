@@ -8,6 +8,7 @@ const Para = (props) =>{
         padding: ${props.padding || ''};
         text-align: ${props => props.textAlign || 'left'};
         hyphens: manual;
+        line-height: 19.2px;
     `;
 
     return(

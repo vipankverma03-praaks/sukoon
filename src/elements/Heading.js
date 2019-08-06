@@ -18,14 +18,14 @@ const Title = (props) => {
 
     const HeadingLight = styled.span`
       line-height: 1;
-     display: ${props => props.display || 'inline-block'};
+      display: ${props => props.display || 'inline-block'};
     `;
 
     return (
-        <Wrapper className={props.wrapperClass}>
+        <Wrapper className={`${props.wrapperClass || ''} font-gilroyRegular`}>
             <SubheadTop>{props.subHeading || 'Explore'}</SubheadTop>
-            <HeadingWrapper className="text-sukoon text-4xl w-full mt-4 block">
-                <HeadingLight className="font-light mr-2"
+            <HeadingWrapper className="text-sukoon text-2xl w-full mt-2 block">
+                <HeadingLight className=" font-light mr-2"
                               display={props.display}>{props.titleLight || ''}</HeadingLight>
                 {props.titleBold}
             </HeadingWrapper>

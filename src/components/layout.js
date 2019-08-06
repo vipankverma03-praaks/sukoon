@@ -9,57 +9,17 @@ import CallIcon from "../images/icons/phone.svg";
 import MailIcon from "../images/icons/mail.svg";
 
 import Header from "./header";
-
-const Heading = () => {
-    return (
-        <div className="text-sukoon text-5xl">
-            <span className="font-light block">
-                Don't Just Stay,
-            </span>
-            <span className="font-extrabold block">
-                Live Here !
-            </span>
-        </div>
-    )
-};
+import Banner from "./Banner";
 
 
-const HeaderIntro = () => {
-    return (
-        <section className="w-full">
-            <div className="p-4">
-                <Heading/>
-            </div>
-            <div id="contact-info-container" className="p-6">
-                <select name="appointment" id="appointment-type"
-                        className="block p-2 bg-transparent outline-none appointment-type mb-2 w-full font-medium"
-                        value="">
-                    <option value="" selected>Appointment Type</option>
-                    <option value="">In House</option>
-                    <option value="">Online Consulting</option>
-                </select>
-                <input type="text" placeholder="Email / Phone"
-                       className="block bg-transparent outline-none customer-contact-info w-full p-2 text-sukoon"/>
-            </div>
-            <div className="p-6 book-now-container flex">
-                <div className="book-now-inner-container p-1">
-                    <button
-                        className="block md:hidden relative outline-none  items-center py-2 px-4 bg-sukoon text-white">
-                        <span className="text-sm font-normal">Book Now</span>
-                    </button>
-                </div>
-            </div>
-        </section>
-    )
-};
 
 const QuickLinks = (props) =>{
 
     return(
-        <div className="flex justify-between p-6">
+        <section className="flex justify-between p-4">
             <div>
-                <span className="text-sukoon text-2xl font-semibold block">Sukoon</span>
-                <ul className="mt-2">
+                <span className="text-sukoon text-2xl font-gilroyBold block">Sukoon</span>
+                <ul className="mt-2 font-gilroyMedium">
                     <li className="text-gray-600 text-lg list-none"><Link to="/">Sitemap</Link></li>
                     <li className="text-gray-600 text-lg list-none"><Link to="/">Our Story</Link></li>
                     <li className="text-gray-600 text-lg list-none"><Link to="/">Privacy Policy</Link></li>
@@ -68,8 +28,8 @@ const QuickLinks = (props) =>{
                 </ul>
             </div>
             <div>
-                <span className="text-sukoon text-2xl font-semibold block">Quick Links</span>
-                <ul className="mt-2">
+                <span className="text-sukoon text-2xl font-gilroyBold block">Quick Links</span>
+                <ul className="mt-2 font-gilroyMedium">
                     <li className="text-gray-600 text-lg list-none">
                         <Link to="/">About Us</Link></li>
                     <li className="text-gray-600 text-lg list-none">
@@ -90,30 +50,30 @@ const QuickLinks = (props) =>{
                         <Link to="/">Contacts</Link></li>
                 </ul>
             </div>
-        </div>
+        </section>
     )
-}
+};
 
 const Subscribe = (props) =>{
     return(
-        <div className="p-6">
-            <div>
-                <span className="text-sukoon font-bold">Subscribe</span>
-                <span className="ml-2 font-bold text-sukoonYellow">Our Newsletter</span>
+        <div className="p-4">
+            <div className="font-gilroyMedium text-xl">
+                <span className="text-sukoon ">Subscribe</span>
+                <span className="ml-2 text-sukoonYellow">Our Newsletter</span>
             </div>
             <div className="mt-4 flex justify-between">
-                <input type="text" placeholder="Enter Your Email Address" className="outline-none bg-transparent"/>
-                <button className="text-sukoon text-lg">Click Me</button>
+                <input type="text" placeholder="Enter Your Email Address" className="outline-none w-10/12 bg-transparent"/>
+                <button className="text-sukoon text-lg">Go</button>
             </div>
         </div>
     )
-}
+};
 
 const ReachUs = (props) =>{
     return(
-        <div className="p-6">
-            <span className="text-sukoon text-4xl font-semibold">Reach Us</span>
-            <Para className="text-gray-800">
+        <div className="p-4">
+            <h2 className="text-sukoon text-4xl  font-normal font-gilroyMedium">Reach Us</h2>
+            <Para>
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since.
             </Para>
             <div className="my-2 flex flex-wrap">
@@ -143,8 +103,8 @@ const FollowUs = (props) =>{
     -webkit-text-fill-color: transparent;
     `;
     return(
-        <div className="p-6">
-            <h2 className="text-sukoon text-xl mb-2">Follow us on :-</h2>
+        <div className="p-4 font-gilroyMedium">
+            <h2 className="text-sukoon text-xl mb-2">Follow us on</h2>
             <div className="text-sm mr-2 flex justify-between break-words">
                 <a href="/" className="mr-2 text-blue-800 cursor-pointer">Facebook</a>
                 <a href="/" className="mr-2 text-blue-400 cursor-pointer">Twitter</a>
@@ -157,7 +117,7 @@ const FollowUs = (props) =>{
 
 const CopyRight = (props) =>{
     return(
-        <div className="py-2 px-6 bg-sukoon text-center break-words">
+        <div className="py-2 px-6 bg-sukoon text-center font-gilroyMedium break-words">
             <span className="text-white text-xs">Copyright © 2019 - All Rights Reserved - Design By Praaks</span>
         </div>
     )
@@ -191,7 +151,7 @@ function Layout({ children }) {
           </main>
 
           <footer className="">
-            <HeaderIntro/>
+            <Banner captionLight="Book" captionBold="Appointment"/>
             <Subscribe/>
             <QuickLinks/>
             <ReachUs/>
