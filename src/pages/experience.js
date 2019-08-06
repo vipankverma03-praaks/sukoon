@@ -1,10 +1,16 @@
 import React from "react";
-import {Link} from "gatsby";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Title from "../elements/Heading";
 import styled from "styled-components";
-import Image from "../../static/service_bg.jpg";
+
+// Components
+import Para from "../elements/Para";
+import Title from "../elements/Heading";
+import BookBtn from "../elements/BookNowBtn";
+import Banner from "../components/Banner";
+import Details from "../elements/Details";
+
+// Images
 import RoomImg from "../images/exp/room.jpg";
 import FloorAct from "../images/exp/party.jpg";
 import Therapy from "../images/exp/bg_2.jpg";
@@ -12,163 +18,105 @@ import Highlight from "../images/exp/bg.jpg";
 import FacOneBg from "../images/exp/room_dining.jpg";
 import FacOneBgSec from "../images/exp/room_spa.jpg";
 import HighlightSecond from "../images/exp/bg_3.jpg";
-import Para from "../elements/Para";
+import BannerBg from "../images/servicesBg.png";
 
-const BannerWrapper = styled.div`
-&::before {
-    content: '';
-    display: block;
-position: absolute;
-z-index: -2;
-left: 0;
-right: 0;
-top: 0;
-bottom: 0;
-background-image: url(${Image}) ;
-background-size:cover;
-background-position:top center;
-}
-&::after {
-    content: '';
-    display: block;
-position: absolute;
-z-index: -1;
-opacity: 0.75;
-left: 0;
-right: 0;
-top: 0; 
-bottom: 0;
-background-color:#bbcdcf;
-}
-`;
+const HighlightSection = styled.div(props=>{
 
-const HighlightSection = styled.div`
-    background: url(${Highlight});
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-`;
-const HighlightSectionSecond = styled.div`
-    background: url(${HighlightSecond});
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-`;
-const FacOne = styled.div`
+
+    return`
+        background-size: cover;
+        background: url(${props.BgImg}) no-repeat center center;
+        
+        .highlight {
+        background: white;
+        margin-top: 75px;
+        margin-bottom: -65px;
+        padding: 25px;
+        box-shadow: 0px 6px 10px #00000024;
+        }
+        .highlight span {
+            font-size: 3.8vw;
+            font-weight: 600;
+        }
+    `
+});
+
+const Face = styled.div(props=>{
+
+    return`
     height:225px;
-    background:url('${FacOneBg}');
-    background-position: center center;
+    background: url('${props.Img}') center center;
     background-size:cover
-`;
-const FacSec = styled.div`
-    height:225px;
-    background:url('${FacOneBgSec}');
-    background-position: center center;
-    background-size:cover
-`;
+    `
+});
+
+const Content = (props) =>{
+    return(
+        <div className="">
+            <img className="mt-3 mb-4" src={RoomImg} alt=""/>
+            <span>Rooms</span>
+            <h3 className="mt-2 mb-1">Suite Room</h3>
+            <Para>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Para>
+            <div className="flex flex-wrap overflow-x-hidden overflow-y-hidden">
+                <ul className="roomFeatures flex overflow-x-scroll w-full">
+                    <li className="mr-3 mt-3 mb-3 ">Wifi</li>
+                    <li className="mr-3 mt-3 mb-3">Kitchen</li>
+                    <li className="mr-3 mt-3 mb-3">Single</li>
+                    <li className="mr-3 mt-3 mb-3">Bed</li>
+                    <li className="mr-3 mt-3 mb-3">TV</li>
+                    <li className="mr-3 mt-3 mb-3">AC</li>
+                </ul>
+            </div>
+        </div>
+    )
+};
+
+
+const ActivityContent = (props) =>{
+
+    return(
+        <div className="">
+            <img className="mt-3 mb-4" src={FloorAct} alt=""/>
+            <Para>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Para>
+        </div>
+    )
+};
 
 
 function Experience() {
     return (
         <Layout>
             <SEO
-                title="About"
+                title="Experience"
                 keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
             />
-            <BannerWrapper className="flex flex-wrap p-5 banner_section relative">
-                <h1 className="w-full text-4xl leading-loose text-sukoon"><span>Don't Just Stay,</span><br />Live Here</h1>
-                <Para className="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur culpa inventore ipsum!</Para>
-            </BannerWrapper>
-
-            <div className="px-5 my-5">
+            <Banner backgroundImg={BannerBg}/>
+            <section className="p-4">
                 <Title subHeading="Tour" titleLight="Experience " titleBold="Sukoon" />
-                <h3 className="mt-3 mb-1 text-sukoon">Let's Take a Tour   </h3>
+                <h3 className="mt-3 mb-1 text-sukoon font-gilroyMedium font-normal">Let's Take a Tour   </h3>
                 <div className="flex flex-wrap overflow-x-hidden overflow-y-hidden">
                     <Para>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</Para>
                 </div>
-            </div>
-            <div className="facilities Exp px-5 my-1">
-            <details className= "mb-3"> 
-                <summary className="border-gray-700"><h2 className="text-xl text-left text-sukoon leading-none">Suite Room</h2></summary>
-              <div className="">
-                  <img className="mt-3 mb-4" src={RoomImg} alt=""/>
-                  <span>Rooms</span>
-                  <h3 className="mt-2 mb-1">Suite Room</h3>
-                  <Para>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Para>
-                <div className="flex flex-wrap overflow-x-hidden overflow-y-hidden">
-                  <ul className="roomFeatures flex overflow-x-scroll w-full">
-                      <li className="mr-3 mt-3 mb-3 ">Wifi</li>
-                      <li className="mr-3 mt-3 mb-3">Kitchen</li>
-                      <li className="mr-3 mt-3 mb-3">Single</li>
-                      <li className="mr-3 mt-3 mb-3">Bed</li>
-                      <li className="mr-3 mt-3 mb-3">TV</li>
-                      <li className="mr-3 mt-3 mb-3">AC</li>
-                  </ul>
-                </div>
-              </div>
-              </details>
-                <details className= "mb-3">
-                    <summary className="border-gray-700"><h2 className="text-xl text-left text-sukoon leading-none">Deluxe Room</h2></summary>
-                    <div className="">
-                        <img className="mt-3 mb-4" src={RoomImg} alt=""/>
-                        <span>Rooms</span>
-                        <h3 className="mt-2 mb-1">Deluxe Room</h3>
-                        <Para>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Para>
-                        <div className="flex flex-wrap overflow-x-hidden overflow-y-hidden">
-                            <ul className="roomFeatures flex overflow-x-scroll w-full">
-                                <li className="mr-3 mt-3 mb-3 ">Wifi</li>
-                                <li className="mr-3 mt-3 mb-3">Kitchen</li>
-                                <li className="mr-3 mt-3 mb-3">Single</li>
-                                <li className="mr-3 mt-3 mb-3">Bed</li>
-                                <li className="mr-3 mt-3 mb-3">TV</li>
-                                <li className="mr-3 mt-3 mb-3">AC</li>
-                            </ul>
-                        </div>
-                    </div>
-                </details>
-                <details className= "mb-3">
-                    <summary className="border-gray-700"><h2 className="text-xl text-left text-sukoon leading-none">Intensive Care Unit</h2></summary>
-                    <div className="">
-                        <img className="mt-3 mb-4" src={RoomImg} alt=""/>
-                        <span>Rooms</span>
-                        <h3 className="mt-2 mb-1">Intensive Care Unit</h3>
-                        <Para>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Para>
-                        <div className="flex flex-wrap overflow-x-hidden overflow-y-hidden">
-                            <ul className="roomFeatures flex overflow-x-scroll w-full">
-                                <li className="mr-3 mt-3 mb-3 ">Wifi</li>
-                                <li className="mr-3 mt-3 mb-3">Kitchen</li>
-                                <li className="mr-3 mt-3 mb-3">Single</li>
-                                <li className="mr-3 mt-3 mb-3">Bed</li>
-                                <li className="mr-3 mt-3 mb-3">TV</li>
-                                <li className="mr-3 mt-3 mb-3">AC</li>
-                            </ul>
-                        </div>
-                    </div>
-                </details>
-            </div>
+            </section>
+            <section className="facilities Exp px-5 my-1">
+                <Details content={Content} border summaryClass="border-gray-700" summaryTextClass="text-xl" summary="Suite Room"/>
+                <Details content={Content} border summaryClass="border-gray-700" summaryTextClass="text-xl" summary="Deluxe Room"/>
+                <Details content={Content} border summaryClass="border-gray-700" summaryTextClass="text-xl" summary="Intensive  Care Unit"/>
+            </section>
             <div className="facilities Perfloor px-5 my-5">
-            <span className="facilities Exp mb-2 block">Activity Per Floor</span>
-            <details open className= "mb-3 border-white p-0">
-                <summary className="border-gray-700"><h2 className="text-2xl text-left text-sukoon leading-none">Lounge</h2></summary>
-              <div className="">
-                  <img className="mt-3 mb-4" src={FloorAct} alt=""/>
-                  <Para>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Para>
-              </div>
-              </details>
-                <details className= "mb-3 border-white p-0">
-                    <summary className="border-gray-700"><h2 className="text-2xl text-left text-sukoon leading-none">Nursing Station</h2></summary>
-                    <div className="">
-                        <img className="mt-3 mb-4" src={FloorAct} alt=""/>
-                        <Para>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</Para>
-                    </div>
-                </details>
-              <button className="globe_btn enquiry block"><Link to="/">Enquiry</Link></button>
+            <span className="facilities  mb-2 block">Activity Per Floor</span>
+                <Details open content={ActivityContent} summaryClass="border-gray-700"  summary="Lounge"/>
+                <Details content={ActivityContent} summaryClass="border-gray-700"  summary="Nursing Station"/>
+                <BookBtn border wrapperClass="float-right">
+                    Enquiry
+                </BookBtn>
             </div>
-            <HighlightSection className="highlightSection px-5 py-5 mt-5">
+            <HighlightSection bgImg={Highlight} className="highlightSection px-5 py-5 mt-5">
                 <div className="highlight">
-                    <span className="text-sukoon ">Nurse To Patient Ratio</span>
+                    <span className="text-sukoon">Nurse To Patient Ratio</span>
                     <h2 className="mb-2">1:1 (One Person One Nurse)</h2>
-                    <Para>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </Para>
+                    <Para>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        been the industry's standard dummy text ever since the 1500s </Para>
                 </div>
             </HighlightSection>
             <div className="px-5 my-5 mt-20">
@@ -189,31 +137,29 @@ function Experience() {
                     <Para>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis deserunt exercitationem omnis.</Para>
                 </div>
             </div>
-            <HighlightSectionSecond className="highlightSection second px-5 py-5 mt-5 mb-24">
+            <HighlightSection bgImg={HighlightSecond} className="highlightSection second px-5 py-5 mt-5 mb-24">
                 <div className="highlight">
                     <span className="text-sukoon ">Patient Care</span>
                     <h2 className="mb-2">Doctor Visit Twice Daily</h2>
                     <Para>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </Para>
                 </div>
-            </HighlightSectionSecond>
+            </HighlightSection>
             <div className="extra_facilities">
                 <div className="facOneSec relative z-10">
-                    <FacOne className="w-full"></FacOne>
+                    <Face Img={FacOneBg} className="w-full" />
                     <div className="details">
                     <h2 className="text-sukoon">Room Dining</h2>
                     <Para>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</Para>
                     </div>
                 </div>
                 <div className="facSecSec relative">
-                    <FacSec className="w-full"></FacSec>
+                    <Face Img={FacOneBgSec} className="w-full" />
                     <div className="details">
                     <h2 className="text-sukoon">Room Spa</h2>
                     <Para>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's</Para>
                     </div>
                 </div>
             </div>
-
-
         </Layout>
     );
 }

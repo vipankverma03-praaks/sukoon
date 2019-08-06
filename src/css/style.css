@@ -189,24 +189,11 @@ input{
     color: #12443e;
     float: right;
     font-size: 35px;
-    margin: 0;
     padding: 0;
     text-align: center;
     line-height: 25px;
     margin-top: 4px;
 }
-
-.facilities details {
-    border: 1px solid #969696;
-    padding: 10px;
-    border-radius: 4px;
-}
-
-.facilities details[open] summary:after {
-    content: "-";
-}
-
-
 
 
 .facilities.Exp img {
@@ -218,10 +205,6 @@ input{
 .facilities.Exp ul.roomFeatures li{
     min-width: 65px;
     text-align: center;
-}
-.facilities.Perfloor.px-5.my-5 details {
-    border: none;
-    padding: 0px;
 }
 
 .highlight {
