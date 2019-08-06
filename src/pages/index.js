@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import {Link} from "gatsby"
-import Title from "../elements/Heading"
+import Title from "../elements/Heading";
+import Para from "../elements/Para";
 
 import BlogImg  from "../images/iStock-968194620_2019-07-17/iStock-968194620@3x.jpg";
 import HeaderBg from "../images/mobile_header.jpg";
@@ -78,10 +78,10 @@ const InHousePharmacy = (props) => {
     return (
         <section className="p-4">
             <Title titleLight="In-House" titleBold="Pharmacy" display="block"/>
-            <p className="text-right">
+            <Para className="text-right">
                 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                 industry's standard dummy text ever since the 1500s
-            </p>
+            </Para>
         </section>
     )
 };
@@ -170,10 +170,10 @@ const Blogs = (props) =>{
                     <span className="block pt-2 text-sukoon text-xl font-normal">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     </span>
-                        <p className="text-gray-700 text-right py-4">
+                        <Para className="text-gray-700 text-right py-4">
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                             been the industry's standard dummy text ever since the 1500s,
-                        </p>
+                        </Para>
                         <div>
                             <span className="text-sukoon font-bold text-sm">Guest</span>
                             <span className="text-sukoon font-light text-sm"> / Apr 16 2019</span>

@@ -12,7 +12,7 @@ const Para = (props) =>{
     `;
 
     return(
-        <Paragraph width={props.width} padding={props.padding} textAlign={props.textAlign} className={`${props.wrapperClass} text-para my-1 text-vlg block`}>
+        <Paragraph width={props.width} padding={props.padding} textAlign={props.textAlign} className={`${props.wrapperClass || '' } text-para my-1 font-gilroyMedium py-1 text-v6xl block`}>
             {props.children || props.content}
         </Paragraph>
     )
