@@ -1,3 +1,4 @@
+
 body h1{
     font-weight: 800;
     line-height: normal;
@@ -138,40 +139,11 @@ body{
  */
 
 
-#menu-hamburger-icon::before{
-    top: 24px;
-    left:12px;
-    position: absolute;
-    content: '';
-    background: #12443e;
-    width: 32px;
-    height: 1px;
-
-}
-#menu-hamburger-icon::after{
-    left: 12px;
-    top: 28px;
-    position: absolute;
-    content: '';
-    background: #12443e;
-    width: 22px;
-    height: 1px;
-
-}
-#header-intro{
-    height: 100%;
-    background-image: url("../../static/mobile_header.jpg");
-    background-position: 29%;
-}
-
 .menu-open{
     position: relative;
     overflow: hidden;
     height: 100vh;
 
-}
-.card-container{
-    background-image: url("../../static/green-leaves-waterdrops-4k-wallpaper-3840x2400@3x.jpg");
 }
 
 .appointment-type{
@@ -202,7 +174,6 @@ input{
 }
 /* Summary tag arrow customization*/
 .facilities summary {
-
     font-size: 1.15em;
     display: flex;
     justify-content: space-between;
@@ -218,24 +189,11 @@ input{
     color: #12443e;
     float: right;
     font-size: 35px;
-    margin: 0;
     padding: 0;
     text-align: center;
     line-height: 25px;
     margin-top: 4px;
 }
-
-.facilities details {
-    border: 1px solid #969696;
-    padding: 10px;
-    border-radius: 4px;
-}
-
-.facilities details[open] summary:after {
-    content: "-";
-}
-
-
 
 
 .facilities.Exp img {
@@ -247,10 +205,6 @@ input{
 .facilities.Exp ul.roomFeatures li{
     min-width: 65px;
     text-align: center;
-}
-.facilities.Perfloor.px-5.my-5 details {
-    border: none;
-    padding: 0px;
 }
 
 .highlight {

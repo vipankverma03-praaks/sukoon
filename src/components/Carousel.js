@@ -1,0 +1,42 @@
+import React from "react";
+import styled from "styled-components";
+import Para from "../elements/Para";
+import ArrowButton from "../elements/ArrowButton";
+
+// Images
+import GreenLeavs from "../images/green-leaves-waterdrops-4k-wallpaper-3840x2400_2019-07-17/green-leaves-waterdrops-4k-wallpaper-3840x2400@2x.jpg";
+
+const CardContainer = styled.div`
+  background-image: url(${GreenLeavs});
+`;
+
+const Carousel = (props) => {
+
+    let item = props.content.map(item => {
+        return (
+            <CardContainer className="card-container p-2 mx-1">
+                <div className="bg-white">
+                    <div className="p-2 px-4 w-full">
+                        <h3 className="text-xl font-bold text-sukoon block">{item.mainTitle}
+                            <span className="font-bold text-sukoon block">{item.subTitle}</span>
+                        </h3>
+                        <Para wrapperClass="my-1 py-2" width="14rem">
+                            {item.para}
+                        </Para>
+                        <ArrowButton border margin="10px 0"/>
+                    </div>
+                </div>
+            </CardContainer>
+        )
+    });
+
+    return (
+        <div className="overflow-y-hidden mt-4">
+            <div className="carousel-container overflow-y-scroll flex flex-no-wrap">
+                {item}
+            </div>
+        </div>
+    );
+};
+
+export default Carousel;

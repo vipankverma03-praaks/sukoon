@@ -11,34 +11,39 @@ import Image from "../../static/service_bg.jpg";
 import Yoga from  "../images/yoga-pics/yoga.jpg";
 import Rooms from "../images/rooms/rooms.jpg";
 import Chambers from "../images/chambers/consulting-chambers.jpg";
+import Banner from "../components/Banner";
+import BannerBg from "../images/servicesBg.png";
+import Details from "../elements/Details";
 
-const BannerWrapper = styled.div`
-&::before {
-    content: '';
-    display: block;
-position: absolute;
-z-index: -2;
-left: 0;
-right: 0;
-top: 0;
-bottom: 0;
-background-image: url(${Image}) ;
-background-size:cover;
-background-position:top center;
-}
-&::after {
-    content: '';
-    display: block;
-position: absolute;
-z-index: -1;
-opacity: 0.75;
-left: 0;
-right: 0;
-top: 0; 
-bottom: 0;
-background-color:#bbcdcf;
-}
+
+const TabList = styled.ul`
+    
+    li{
+    margin-left: 2px ;
+    }
+    button:focus{
+      outline: none;
+    }
+    .active{
+      background: #12444a;
+      color: #fff;
+    }
+    
+    .passive{
+      background: #f0f8f4;
+    }
 `;
+
+const Content = (props) =>{
+  return(
+      <div>
+          <div className="w-full">
+              <img src={Yoga} alt="Sukoon yoga"/>
+          </div>
+          <Para wrapperClass="px-5" width="88%">Hi Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</Para>
+      </div>
+  )
+};
 
 function InfrastructurePage() {
     return (
@@ -47,17 +52,17 @@ function InfrastructurePage() {
                 title="About"
                 keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
             />
-            <BannerWrapper className="flex flex-wrap p-5 banner_section relative">
-                <h1 className="w-full text-4xl leading-loose text-sukoon"><span>Don't Just Stay,</span><br />Live Here</h1>
-                <Para className="mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur culpa inventore ipsum!</Para>
-            </BannerWrapper>
-            <div className="px-5 my-5">
+            <Banner backgroundImg={BannerBg}/>
+            <section className="p-4">
                 <Title subHeading="Tour" titleLight="1500 " titleBold="Sq. Feet" />
                 <div className="flex flex-wrap overflow-x-hidden overflow-y-hidden">
-                    <Para>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</Para>
+                    <Para>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                        been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                        galley of type and scrambled it to make a type specimen book. It has survived not only five
+                        centuries, but also the leap into electronic typesetting, remaining essentially unchanged</Para>
                 </div>
-            </div>
-            <div className="my-5">
+            </section>
+            <section className="py-4">
                 <span className="px-5 text-sukoon">OPD</span>
                 <div className="">
                     <h2 className="px-5 text-2xl text-left text-sukoon leading-none">Consulting Chambers</h2>
@@ -76,52 +81,37 @@ function InfrastructurePage() {
                     </div>
                     <Para wrapperClass="px-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis deserunt exercitationem omnis.</Para>
                 </div>
-            </div>
-            <div className="facilities my-5">
-            <details className= "mb-3">
-                <summary className="px-5"><h2 className="text-2xl text-left text-sukoon leading-none">Fitness Studio</h2></summary>
-              <div>
-                  <div className="w-full">
-                      <img src={Yoga} alt="Sukoon yoga"/>
-                  </div>
-                  <Para wrapperClass="px-5" width="88%">Hi Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</Para>
-              </div>
-            </details>
-                <details className= "mb-3">
-                    <summary className="px-5"><h2 className="text-2xl text-left text-sukoon leading-none">Art Studio</h2></summary>
-                    <div>
-                        <div className="w-full">
-                            <img src={Yoga} alt="Sukoon yoga"/>
-                        </div>
-                        <Para wrapperClass="px-5" width="88%">Hi Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</Para>
-                    </div>
-                </details>
-                <details className= "mb-3">
-                    <summary className="px-5"><h2 className="text-2xl text-left text-sukoon leading-none">Terrace Garden</h2></summary>
-                    <div>
-                        <div className="w-full">
-                            <img src={Yoga} alt="Sukoon yoga"/>
-                        </div>
-                        <Para wrapperClass="px-5" width="88%">Hi Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</Para>
-                    </div>
-                </details>
-            </div>
-            <div className="my-5">
+            </section>
+            <section className="py-4">
+                <Details content={Content} summary="Fitness Studio"/>
+                <Details content={Content} summary="Art Studio"/>
+                <Details content={Content} summary="Terrace Garden"/>
+            </section>
+            <section className="py-4">
                 <span className="text-sukoon px-5">IPD</span>
                 <div className="">
                     <h2 className="text-2xl px-5 text-left text-sukoon leading-none">Movie Lounge</h2>
-                    <div className="flex px-5 flex-wrap overflow-x-hidden overflow-y-hidden">
-                        <ul className="patient_services_nav flex overflow-x-scroll">
-                            <li className="mr-3 mt-3">
-                                <button className="bg-white text-sm hover:bg-gray-100 text-gray-800 font-medium py-2 w-48 text-left">Rooms</button>
+                    <div className="flex flex-wrap overflow-x-hidden overflow-y-hidden">
+                        <TabList className="patient_services_nav flex overflow-x-scroll">
+                            <li className="mt-3">
+                                <button className="bg-white active text-sm hover:bg-gray-100 text-gray-800 font-medium py-2 px-4 w-fit text-left">Rooms</button>
                             </li>
-                            <li className="mr-3 mt-3">
-                                <button className="bg-white text-sm hover:bg-gray-100 text-gray-800 font-medium py-2 w-48 text-left">Intensive Care Unit</button>
+                            <li className="mt-3">
+                                <button className="bg-white text-sm passive hover:bg-gray-100 text-gray-800 font-medium py-2 px-4 w-fit text-left">ICU</button>
                             </li>
-                            <li className="mr-3 mt-3">
-                                <button className="bg-white text-sm hover:bg-gray-100 text-gray-800 font-medium py-2 w-48 text-left">Movie Lounge</button>
+                            <li className="mt-3">
+                                <button className="bg-white text-sm passive hover:bg-gray-100 text-gray-800 font-medium py-2 px-4 w-fit text-left">Lounge</button>
                             </li>
-                        </ul>
+                            <li className="mt-3">
+                                <button className="bg-white text-sm passive hover:bg-gray-100 text-gray-800 font-medium py-2 px-4 w-fit text-left">Dummy</button>
+                            </li>
+                            <li className="mt-3">
+                                <button className="bg-white text-sm passive hover:bg-gray-100 text-gray-800 font-medium py-2 px-4 w-fit text-left">Lorem</button>
+                            </li>
+                            <li className="mt-3">
+                                <button className="bg-white text-sm passive hover:bg-gray-100 text-gray-800 font-medium py-2 w-fit px-4 text-left">Ipsum</button>
+                            </li>
+                        </TabList>
                     </div>
                     <div>
                         <div className="w-full">
@@ -130,7 +120,7 @@ function InfrastructurePage() {
                         <Para wrapperClass="px-5">Hi Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</Para>
                     </div>
                 </div>
-            </div>
+            </section>
         </Layout>
     );
 }
