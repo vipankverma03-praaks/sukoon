@@ -11,11 +11,11 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Sukoon`,
-        short_name: `Psychiatry Center`,
+        short_name: `Sukoon`,
         start_url: `/`,
-        background_color: `#ffffff`,
+        background_color: `#12443e`,
         theme_color: `#b7e2c9`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: `src/images/sukoon-icon.png`
       }
     },
