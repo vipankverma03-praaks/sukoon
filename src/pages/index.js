@@ -12,6 +12,9 @@ import HeaderBg from "../images/mobile_header.jpg";
 import Banner from "../components/Banner";
 import Carousel from "../components/Carousel";
 import MeetExperts from "../components/MeetExperts";
+import Button from "../elements/BookNowBtn";
+import {Link} from "gatsby";
+import ArrowButton from "../elements/ArrowButton";
 
 const Caption = (props) => {
     return (
@@ -161,11 +164,11 @@ const Faqs = (props) => {
 
 const Blogs = (props) =>{
     return(
-        <section className="p-4">
+        <section className="p-4 pb-1">
             <div>
                 <Title titleLight="" titleBold="Blogs"/>
-                <div className="shadow-lg">
-                    <img src={BlogImg} alt="Blog Image"/>
+                <div className="shadow-lg mt-4">
+                    <img src={BlogImg} alt="Blog"/>
                     <div className="p-2">
                     <span className="block pt-2 text-sukoon text-xl font-normal">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -179,6 +182,10 @@ const Blogs = (props) =>{
                             <span className="text-sukoon font-light text-sm"> / Apr 16 2019</span>
                         </div>
                     </div>
+                </div>
+                <div className="mt-6 flex">
+                    <Link to="/" className="pb-1 border-solid border-b border-sukoon ">Read More Blogs</Link>
+                    <ArrowButton border={false} margin="0 12px"/>
                 </div>
             </div>
         </section>

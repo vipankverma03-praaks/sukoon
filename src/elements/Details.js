@@ -7,13 +7,14 @@ const DetailWrapper = styled.details((props)=>{
     return`
             &{
             border: ${props.border ? '1px solid #969696' : ''};
-            padding: 10px;
+            padding: ${props.padding || '10px'};
             border-radius: 4px;
            }
           & summary {
             display: flex;
             justify-content: space-between;
             outline: none
+            align-items: center;
           }
         
           & summary::-webkit-details-marker {
@@ -41,7 +42,7 @@ const DetailWrapper = styled.details((props)=>{
 const Details = (props) =>{
 
     return(
-        <DetailWrapper open={props.open} border={props.border}  className= "mb-3">
+        <DetailWrapper open={props.open} padding={props.padding} border={props.border}  className= "mb-3">
             <summary className={`${props.summaryClass || 'px-5'} `}><h2 className={`${props.summaryTextClass || 'text-2xl'}  text-left text-sukoon leading-none`}>{props.summary}</h2></summary>
             {props.content()}
         </DetailWrapper>

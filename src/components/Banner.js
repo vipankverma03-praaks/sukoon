@@ -9,7 +9,7 @@ import Para from "../elements/Para";
 
 const HeadingWrapper = styled.div`
   font-size: 12vw;
-  line-height: 1.3;
+  line-height: 1.2;
 `;
 
 const Header = styled.section`
@@ -36,8 +36,8 @@ const ParaSection = (props) => {
 
     return(
         <div>
-            <Para width="100%" padding="5px 15px">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur culpa
-                inventore ipsum!</Para>
+            <p className="text-para font-gilroyMedium py-1 text-left text-v6xl block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur culpa
+                inventore ipsum!</p>
         </div>
     )
 };
@@ -46,9 +46,9 @@ const BookNow = (props) =>{
 
     return(
         <div>
-            <div id="contact-info-container" className="pl-4 my-2">
+            <div id="contact-info-container" className="my-2">
                 <select name="appointment" id="appointment-type"
-                        className="block p-2 bg-transparent outline-none appointment-type mb-2 w-full font-medium"
+                        className="block pb-2 bg-transparent outline-none appointment-type w-full font-medium"
                         value="">
                     <option value="" selected>Appointment Type</option>
                     <option value="">In House</option>
@@ -57,19 +57,17 @@ const BookNow = (props) =>{
                 <input type="text" placeholder="Email / Phone"
                        className="block bg-transparent outline-none customer-contact-info w-full p-2 text-sukoon"/>
             </div>
-            <div className="ml-4 py-4 sm:m-4 book-now-container flex">
-                <div className="book-now-inner-container p-1">
-                    <BookBtn>
+            <div className="flex mt-4">
+                    <BookBtn border bg="transparent" wrapperClass="">
                         Book Now
                     </BookBtn>
-                </div>
                 {props.contact ?
                     <div className="my-auto mx-2">
-                        <span className="font-gilroyRegular font-bold">or Call at +91 9876543210</span>
+                        <span className="font-gilroyRegular">or Call at +91 9876543210</span>
                     </div> : null}
             </div>
             { props.discover ?
-                <div className="p-4 flex">
+                <div className="mt-4 flex">
                     <Link to="/" className="underline">Discover Process</Link>
                     <ArrowButton border={false} margin="0 12px"/>
                 </div> : null}
@@ -81,8 +79,8 @@ const BookNow = (props) =>{
 
 const Banner = (props) => {
     return (
-        <Header bookNow={props.bookNow} backgroundImg={props.backgroundImg} className="w-full">
-            <div className="ml-4 my-2">
+        <Header bookNow={props.bookNow} backgroundImg={props.backgroundImg} className="w-full p-4 ">
+            <div className="">
                 <Heading captionLight={props.captionLight} captionBold={props.captionBold} />
             </div>
             {props.bookNow ?

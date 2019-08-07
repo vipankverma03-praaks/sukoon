@@ -38,11 +38,23 @@ const TabList = styled.ul`
 
 const Tab = styled.button`
     margin-left: 1px;
+    width: 75px;
     
     &:focus{
     outline: none;
     }
 `;
+
+const InfoSection = (props) =>{
+
+    return(
+        <div className={`${props.wrapperClass || ''}`}>
+            <h2 className="text-2xl text-left text-sukoon leading-none">{props.title}</h2>
+            <Para>
+                {props.content}</Para>
+        </div>
+    )
+};
 
 const CareService = (props) =>{
 
@@ -52,58 +64,54 @@ const CareService = (props) =>{
             <div className="flex flex-wrap overflow-x-hidden ">
                 <TabList className="patient_services_nav flex overflow-y-hidden overflow-x-scroll">
                     <li className="mt-3">
-                        <Tab className="text-sm text-gray-800 active font-medium py-2 px-4 w-fit text-left">
+                        <Tab className="text-sm text-gray-800 active font-medium py-2 px-2 w-fit text-left">
                             Tab1
                         </Tab>
                     </li>
                     <li className="mt-3">
                         <Tab
-                            className="bg-white text-sm text-gray-800 passive font-medium py-2 px-4 w-fit text-left">
+                            className="bg-white text-sm text-gray-800 passive font-medium py-2 px-2 w-fit text-left">
                             Tab2
                         </Tab>
                     </li>
                     <li className="mt-3">
                         <Tab
-                            className="bg-white text-sm text-gray-800 passive font-medium py-2 px-4 w-fit text-left">Tab3
+                            className="bg-white text-sm text-gray-800 passive font-medium py-2 px-2 w-fit text-left">Tab3
                         </Tab>
                     </li>
                     <li className=" mt-3">
                         <Tab
-                            className="bg-white text-sm text-gray-800 passive font-medium py-2 px-4 w-fit text-left">Tab4
+                            className="bg-white text-sm text-gray-800 passive font-medium py-2 px-2 w-fit text-left">Tab4
                         </Tab>
                     </li>
                     <li className="mt-3">
                         <Tab
-                            className="bg-white text-sm text-gray-800 passive font-medium py-2 px-4 w-fit text-left">Tab5
+                            className="bg-white text-sm text-gray-800 passive font-medium py-2 px-2 w-fit text-left">Tab5
                         </Tab>
                     </li>
                     <li className="mt-3">
                         <Tab
-                            className="bg-white text-sm text-gray-800 passive font-medium py-2 px-4 w-fit text-left">Tab5
+                            className="bg-white text-sm text-gray-800 passive font-medium py-2 px-2 w-fit text-left">Tab5
                         </Tab>
                     </li>
                     <li className="mt-3">
                         <Tab
-                            className="bg-white text-sm text-gray-800 passive font-medium py-2 px-4 w-fit text-left">Tab5
+                            className="bg-white text-sm text-gray-800 passive font-medium py-2 px-2 w-fit text-left">Tab5
                         </Tab>
                     </li>
                 </TabList>
-                <ServiceType className="service_content  overflow-x-hidden text-justify">
-                    <h2 className="text-2xl text-left text-sukoon leading-none">Acute Psychiatry Services</h2>
-                    <Para>Hennepin Healthcare's Acute Psychiatric Services (APS) center serves those in emotional
+                <ServiceType className="service_content mt-2 overflow-x-hidden text-justify">
+                    <InfoSection title="Acute Psychiatry Services" content="Hennepin Healthcare's Acute Psychiatric Services (APS) center serves those in emotional
                         crisis with 24-hour, seven-day-a-week crisis counseling, assessment, and referral. More than
                         42,000 calls and drop-in visits each year are handled by the Acute Psychiatric Services
                         staff of psychiatrists, social workers, and psychiatric nurses. The APS is supported by
-                        Hennepin County funds and state grants, provides these services to any person in need.</Para>
-                    <h2 className="text-2xl text-sukoon font-semibold">Service</h2>
-                    <Para>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus magni sapiente
-                        veritatis.</Para>
-                    <h2 className="text-2xl text-sukoon font-semibold">Our Treatment Team</h2>
-                    <Para>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus magni sapiente
-                        veritatis.</Para>
-                    <h2 className="text-2xl text-sukoon font-semibold">Treatment Goal</h2>
-                    <Para>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus magni sapiente
-                        veritatis.</Para>
+                        Hennepin County funds and state grants, provides these services to any person in need." />
+                    <InfoSection title="Service" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus magni sapiente
+                        veritatis."/>
+                    <InfoSection title="Our Treatment Team" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus magni sapiente
+                        veritatis."/>
+                    <InfoSection title="Treatment Goal" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus magni sapiente
+                        veritatis."/>
                 </ServiceType>
             </div>
         </section>

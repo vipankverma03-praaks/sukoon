@@ -78,15 +78,15 @@ const ReachUs = (props) =>{
             </Para>
             <div className="my-2 flex flex-wrap">
                 <div className="text-sukoon mr-2 my-2 flex px-1">
-                    <div className="fit"><img src={HelpIcon} className="w-6" alt="Help Icon"/></div>
+                    <div className="fit"><img src={HelpIcon} className="w-4" alt="Help Icon"/></div>
                     <span className="ml-4">1800 123 6789</span>
                 </div>
                 <div className="text-sukoon mr-2 my-2 flex px-1">
-                    <div className="fit"><img src={CallIcon} className="w-6" alt="Help Icon"/></div>
+                    <div className="fit"><img src={CallIcon} className="w-4" alt="Help Icon"/></div>
                     <span className="ml-4">1800 123 6789</span>
                 </div>
                 <div className="text-sukoon mr-2 my-2 flex px-1">
-                    <div className="fit"><img src={MailIcon} className="w-6" alt="Help Icon"/></div>
+                    <div className="fit"><img src={MailIcon} className="w-4" alt="Help Icon"/></div>
                     <span className="ml-4">1800 123 6789</span>
                 </div>
             </div>
@@ -151,7 +151,7 @@ function Layout({ children }) {
           </main>
 
           <footer className="">
-            <Banner captionLight="Book" captionBold="Appointment"/>
+            <Banner captionLight="Book An" captionBold="Appointment"/>
             <Subscribe/>
             <QuickLinks/>
             <ReachUs/>

@@ -25,7 +25,9 @@ const HighlightSection = styled.div(props=>{
 
     return`
         background-size: cover;
-        background: url(${props.BgImg}) no-repeat center center;
+        background-image: url(${props.BgImg});
+        background-position: center center;
+        background-repeat: no-repeat;
         
         .highlight {
         background: white;
@@ -71,7 +73,6 @@ const Content = (props) =>{
     )
 };
 
-
 const ActivityContent = (props) =>{
 
     return(
@@ -81,7 +82,6 @@ const ActivityContent = (props) =>{
         </div>
     )
 };
-
 
 function Experience() {
     return (
@@ -99,19 +99,19 @@ function Experience() {
                 </div>
             </section>
             <section className="facilities Exp px-5 my-1">
-                <Details content={Content} border summaryClass="border-gray-700" summaryTextClass="text-xl" summary="Suite Room"/>
-                <Details content={Content} border summaryClass="border-gray-700" summaryTextClass="text-xl" summary="Deluxe Room"/>
+                <Details  open content={Content} border summaryClass="border-gray-700" summaryTextClass="text-xl" summary="Suite Room"/>
+                <Details  content={Content} border summaryClass="border-gray-700" summaryTextClass="text-xl" summary="Deluxe Room"/>
                 <Details content={Content} border summaryClass="border-gray-700" summaryTextClass="text-xl" summary="Intensive  Care Unit"/>
             </section>
             <div className="facilities Perfloor px-5 my-5">
             <span className="facilities  mb-2 block">Activity Per Floor</span>
-                <Details open content={ActivityContent} summaryClass="border-gray-700"  summary="Lounge"/>
-                <Details content={ActivityContent} summaryClass="border-gray-700"  summary="Nursing Station"/>
+                <Details padding="0" open content={ActivityContent} summaryClass="border-gray-700"  summary="Lounge"/>
+                <Details padding="0" content={ActivityContent} summaryClass="border-gray-700"  summary="Nursing Station"/>
                 <BookBtn border wrapperClass="float-right">
                     Enquiry
                 </BookBtn>
             </div>
-            <HighlightSection bgImg={Highlight} className="highlightSection px-5 py-5 mt-5">
+            <HighlightSection BgImg={Highlight} className="highlightSection px-5 py-5 mt-5">
                 <div className="highlight">
                     <span className="text-sukoon">Nurse To Patient Ratio</span>
                     <h2 className="mb-2">1:1 (One Person One Nurse)</h2>
@@ -137,7 +137,7 @@ function Experience() {
                     <Para>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis deserunt exercitationem omnis.</Para>
                 </div>
             </div>
-            <HighlightSection bgImg={HighlightSecond} className="highlightSection second px-5 py-5 mt-5 mb-24">
+            <HighlightSection BgImg={HighlightSecond} className="highlightSection second px-5 py-5 mt-5 mb-24">
                 <div className="highlight">
                     <span className="text-sukoon ">Patient Care</span>
                     <h2 className="mb-2">Doctor Visit Twice Daily</h2>
