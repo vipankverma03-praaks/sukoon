@@ -17,7 +17,7 @@ const Button = (props) =>{
   return(
     <Wrapper borderTransparent={props.borderTransparent} bg={props.bg} border={props.border} className={`${props.wrapperClass || ''} w-fit`}>
       <button
-        className={`${props.buttonClass || ''} block relative font-gilroyMedium outline-none text-sm items-center bg-sukoon text-white`}>
+        className={`${props.buttonClass || 'bg-sukoon'} block relative font-gilroyMedium outline-none text-sm items-center  text-white`}>
         {props.children}
       </button>
     </Wrapper>
