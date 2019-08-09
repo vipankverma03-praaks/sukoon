@@ -33,13 +33,13 @@ const Caption = (props) => {
 const WhySukoon = (props) => {
     return (
         <section id="why-sukoon" className="why-sukoon p-4">
-            <Title titleLight="Why" titleBold="Sukoon" />
-            <Caption subHeading="Caption 1"
-                     para="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"/>
-            <Caption subHeading="Caption 2"
-                     para="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"/>
-            <Caption subHeading="Caption 3"
-                     para="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"/>
+            <Title subHeading="About" titleLight="Why" titleBold="Sukoon" />
+            <Caption subHeading="Consult best doctors"
+                     para=" Get expert advice from our team of experienced doctors, led by Dr. Sameer Parikh"/>
+            <Caption subHeading="Get personalised care"
+                     para="Receive customised and holistic care because of our incredible 1:1 nurse to patient ratio"/>
+            <Caption subHeading="Experience premium facilities"
+                     para="Enhance your recovery in a calming, positive, and comfortable environment "/>
         </section>
     )
 };
@@ -71,7 +71,7 @@ const InPatientServices = (props) => {
 
     return (
         <section id="inpatient-services" className="p-4">
-            <Title titleLight="In Patient" titleBold="Care Services" display="block"/>
+            <Title subHeading="IPD" titleLight="Residential" titleBold="Services" display="block"/>
             <Carousel content={content}/>
         </section>
     )
@@ -154,7 +154,7 @@ const Faqs = (props) => {
 
     return (
         <section className="p-4">
-            <Title titleLight="Frequently" titleBold="Asked Questions"/>
+            <Title subHeading="Learn" titleLight="Frequently" titleBold="Asked Questions"/>
             <div className="">
                 {items}
             </div>
@@ -166,7 +166,7 @@ const Blogs = (props) =>{
     return(
         <section className="p-4 pb-1">
             <div>
-                <Title titleLight="" titleBold="Blogs"/>
+                <Title subHeading="Learn" titleLight="" titleBold="Blogs"/>
                 <div className="shadow-lg mt-4">
                     <img src={BlogImg} alt="Blog"/>
                     <div className="p-2">
@@ -196,7 +196,7 @@ const OutPatientServices = (props) => {
 
     return (
         <section id="out-patient-services" className="p-4">
-            <Title titleLight="Out Patient" titleBold="Care Services" display="block"/>
+            <Title subHeading="OPD" titleLight="Out Patient" titleBold="Care Services" display="block"/>
             <Carousel content={content}/>
         </section>
     )

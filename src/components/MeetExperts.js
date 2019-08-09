@@ -145,7 +145,7 @@ const MeetExpertsWrapper = styled.section`
 const MeetExperts = (props) => {
     return (
         <MeetExpertsWrapper id="meet-experts" className="p-4 relative">
-            <Title titleLight="Meet" titleBold="Experts"/>
+            <Title subHeading="About" titleLight="Our" titleBold="Doctors"/>
             <Para width="100%" content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
                 industry's standard dummy text ever since the 1500s" />
             <MeetExpertsCarousel />
