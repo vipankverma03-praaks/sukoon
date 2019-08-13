@@ -90,7 +90,7 @@ function InternationalPatient() {
                     <input className="bg-transparent border-b border-gray-100 w-full py-1 mb-2" type="text" placeholder="Upload Your Medical Pres.." />
                     <textarea className="bg-transparent border-b border-gray-100 w-full py-1 mb-2" type="text" placeholder="Comments">
                     </textarea>
-                    <BookBtn border wrapperClass="">
+                    <BookBtn theme="green">
                         Get An Estimate
                     </BookBtn>
                 </MainForm>

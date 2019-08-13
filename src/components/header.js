@@ -139,13 +139,13 @@ function Header(props) {
                             Doctors
                         </Link>
                         <Link
-                            to="/"
+                            to="/internationalPatient"
                             className="inline-block mt-4 mt-0 mr-6 no-underline"
                         >
                             International Patients
                         </Link>
                         <Link
-                            to="/"
+                            to="/faqs"
                             className="inline-block mt-4 mt-0 mr-6 no-underline"
                         >
                             FAQS
@@ -157,7 +157,7 @@ function Header(props) {
                             Blogs
                         </Link>
                         <Link
-                            to="/"
+                            to="/contact"
                             className="inline-block mt-4 mt-0 mr-6 no-underline"
                         >
                             Contact

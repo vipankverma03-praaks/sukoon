@@ -3,7 +3,7 @@ import styled, { ThemeProvider } from "styled-components";
 
 
 const Wrapper = styled.div`
-  padding: ${props => props.full ? '0' : '5px'};
+  padding: ${props => props.full ? '0' : '2px'};
   background: ${props=> props.theme.fg};
   border: 1px solid ${props => props.theme.bg};
 
