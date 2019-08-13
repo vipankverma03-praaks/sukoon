@@ -145,11 +145,9 @@ function Layout({ children }) {
             } flex-col min-h-screen text-gray-900`}
         >
           <Header toggleMenu={toggleMenu} siteTitle={data.site.siteMetadata.title} />
-
-          <main className="flex flex-col flex-1 md:justify-center max-w-4xl mx-auto md:p-8 w-full">
+          <main className="flex flex-col flex-1 justify-center max-w-4xl mx-auto w-full">
             {children}
           </main>
-
           <footer className="">
             <Banner captionLight="Book An" captionBold="Appointment"/>
             <Subscribe/>
