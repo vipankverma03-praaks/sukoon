@@ -1,17 +1,24 @@
 import {Link} from "gatsby";
 import PropTypes from "prop-types";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
+import styled from "styled-components";
 
 import SukoonLogo from "../images/sukoon-logo/logo_dark@3x.png"
 import Call from "../images/icons/phone.svg";
-import styled from "styled-components";
+
+
+// Components
+import BookBtn from "../elements/BookNowBtn";
 
 const MenuLinkWrapper = styled.div`
   height: 88%;
 `;
 
 const Nav = styled.nav`
-  z-index: 1001;
+  width: 100%;
+  transition: all 200ms ease-in-out;
+  background: #C2DCD3;
+  min-height: 50px;
 `;
 
 const Menu = styled.span`
@@ -40,11 +47,39 @@ const Menu = styled.span`
 function Header(props) {
     const [isExpanded, toggleExpansion] = useState(false);
 
+    // Makes nav bar sticky after user scrolls past banner section.
+    const handleScroll = () =>{
+
+        let Header = document.getElementById('header-intro');
+        let StickyMenu = document.getElementById('nav-bar');
+        let Booking = document.getElementById('nav-booking-button');
+        let offset =  Math.abs(Number(Header.getBoundingClientRect().top));
+
+        if(offset > 786 || offset > 666 || offset > 556){
+            Booking.classList.add('show');
+            Booking.classList.remove('hide');
+            StickyMenu.classList.add('sticky');
+            StickyMenu.classList.remove('static');
+        }
+        else{
+            Booking.classList.add('hide');
+            Booking.classList.remove('show');
+            StickyMenu.classList.remove('sticky');
+            StickyMenu.classList.add('static');
+        }
+
+    };
+
+    // Similar to componentDidMount and componentDidUpdate:
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll)
+    });
+
     return (
-        <Nav className={`${ isExpanded ? `` : ``}`}>
+        <Nav id="nav-bar" className="">
             <div className={`${
                 isExpanded ? `hidden` : `flex`
-                } flex-wrap items-center justify-between mx-auto p-2`}
+                } flex-wrap items-center justify-between mx-auto p-2 pt-6`}
             >
                 <div className="w-8">
                     <Link to="/" className="flex items-center no-underline ">
@@ -52,10 +87,9 @@ function Header(props) {
                     </Link>
                 </div>
                 <div className="flex">
-                    <button
-                        className="block text-xs font-gilroyMedium relative outline-none flex items-center py-1 px-2 mr-2 bg-sukoon text-white">
+                    <BookBtn theme="green" id="nav-booking-button" wrapperClass="hide" full>
                         Book Appointment
-                    </button>
+                    </BookBtn>
                     <button
                         className="block relative outline-none flex items-center px-3 pb-2 rounded text-sukoon"
                         onClick={() => {toggleExpansion(!isExpanded);

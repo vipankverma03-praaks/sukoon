@@ -128,7 +128,7 @@ function Services() {
             <Banner backgroundImg={BannerBg}/>
             <CareService titleLight="In Patient" titleBold="Care Services"/>
             <CareService titleLight="Out Patient" titleBold="Care Services"/>
-            <MeetExperts/>
+            {/*<MeetExperts/>*/}
         </Layout>
     );
 }

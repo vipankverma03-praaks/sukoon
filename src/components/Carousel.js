@@ -8,13 +8,14 @@ import GreenLeavs from "../images/green-leaves-waterdrops-4k-wallpaper-3840x2400
 
 const CardContainer = styled.div`
   background-image: url(${GreenLeavs});
+  background-position: center center  ;
 `;
 
 const Carousel = (props) => {
 
     let item = props.content.map(item => {
         return (
-            <CardContainer className="card-container p-2 mx-1">
+            <CardContainer className={`${props.class} my-2 p-3 mx-1`}>
                 <div className="bg-white">
                     <div className="p-2 px-4 w-full">
                         <h3 className="text-xl font-bold text-sukoon block">{item.mainTitle}
