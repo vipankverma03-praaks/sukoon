@@ -138,6 +138,20 @@ body{
  * @import "utilities/skew-transforms";
  */
 
+/* Sticky menu CSS*/
+
+.sticky{
+    z-index: 1001;
+    transition: all 200ms ease-in-out;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+}
+
+
+
+
 
 .menu-open{
     position: relative;
@@ -150,10 +164,7 @@ body{
     color: #12443e;
     border-bottom: 1px solid #12443e;
 }
-input{
-    border-bottom: 1px solid #12443e;
-}
-.customer-contact-info::placeholder{
+input::placeholder{
     color: #12443e;
     opacity: 1;
 }

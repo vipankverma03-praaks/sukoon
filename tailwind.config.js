@@ -16,6 +16,7 @@ module.exports = {
       black: '#000',
       white: '#fff',
       sukoon: '#12443e',
+      mint: '#60ad9e',
       sukoonYellow: '#ffc300',
       menuBg: '#d1e1d6cf',
       tab: '#d1e1d6cf',

@@ -12,17 +12,17 @@ import HeaderBg from "../images/mobile_header.jpg";
 import Banner from "../components/Banner";
 import Carousel from "../components/Carousel";
 import MeetExperts from "../components/MeetExperts";
-import Button from "../elements/BookNowBtn";
 import {Link} from "gatsby";
 import ArrowButton from "../elements/ArrowButton";
+import Infrastructure from "../components/Infrastructure";
 
 const Caption = (props) => {
     return (
-        <div className="my-2">
+        <div className="my-4">
             <h2 className="text-sukoon text-lg font-gilroyRegular font-bold block">
                 {props.subHeading || ''}
             </h2>
-            <Para className="text-right py-2">
+            <Para>
                 {props.para || ''}
             </Para>
         </div>
@@ -72,7 +72,7 @@ const InPatientServices = (props) => {
     return (
         <section id="inpatient-services" className="p-4">
             <Title subHeading="IPD" titleLight="Residential" titleBold="Services" display="block"/>
-            <Carousel content={content}/>
+            <Carousel class="" content={content}/>
         </section>
     )
 };
@@ -213,8 +213,8 @@ function IndexPage() {
             <WhySukoon/>
             <InPatientServices/>
             <OutPatientServices/>
-            <InHousePharmacy/>
-            <MeetExperts/>
+            <Infrastructure />
+            {/*<MeetExperts/>*/}
             <Faqs/>
             <Blogs/>
         </Layout>

@@ -15,7 +15,7 @@ const HeadingWrapper = styled.div`
 const Header = styled.section`
     ${props => props.backgroundImg ? `background-image: url(${props.backgroundImg});` : ''}
     background-position: top 0 left 0;
-    background-size: 160vw;
+    background-size: cover;
     background-repeat: no-repeat;
 `;
 
@@ -36,7 +36,7 @@ const ParaSection = (props) => {
 
     return(
         <div>
-            <p className="text-para font-gilroyMedium py-1 text-left text-v6xl block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur culpa
+            <p className="text-para font-gilroyMedium py-1 text-left text-v6xl mb-8 block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur culpa
                 inventore ipsum!</p>
         </div>
     )
@@ -45,19 +45,19 @@ const ParaSection = (props) => {
 const BookNow = (props) =>{
 
     return(
-        <div>
-            <div id="contact-info-container" className="my-2">
+        <div className="mb-12">
+            <div id="contact-info-container" className="mt-4">
                 <select name="appointment" id="appointment-type"
-                        className="block pb-2 bg-transparent outline-none appointment-type w-full font-medium"
+                        className="block py-2 bg-transparent border-b border-solid border-sukoon outline-none w-full font-medium"
                         value="">
                     <option value="" selected>Appointment Type</option>
                     <option value="">In House</option>
                     <option value="">Online Consulting</option>
                 </select>
                 <input type="text" placeholder="Email / Phone"
-                       className="block bg-transparent outline-none customer-contact-info w-full p-2 text-sukoon"/>
+                       className="block bg-transparent border-b border-solid border-sukoon outline-none w-full pl-1 pb-1  pt-2 text-sukoon"/>
             </div>
-            <div className="flex mt-4">
+            <div className="flex mt-8">
                     <BookBtn border bg="transparent" wrapperClass="">
                         Book Now
                     </BookBtn>
@@ -67,8 +67,8 @@ const BookNow = (props) =>{
                     </div> : null}
             </div>
             { props.discover ?
-                <div className="mt-4 flex">
-                    <Link to="/" className="underline">Discover Process</Link>
+                <div className="mt-12 flex">
+                    <Link to="/" className="underline">Explore Appointments</Link>
                     <ArrowButton border={false} margin="0 12px"/>
                 </div> : null}
         </div>
@@ -79,8 +79,8 @@ const BookNow = (props) =>{
 
 const Banner = (props) => {
     return (
-        <Header bookNow={props.bookNow} backgroundImg={props.backgroundImg} className="w-full p-4 ">
-            <div className="">
+        <Header id="header-intro" bookNow={props.bookNow} backgroundImg={props.backgroundImg} className="w-full px-4">
+            <div className="mt-8 mb-6">
                 <Heading captionLight={props.captionLight} captionBold={props.captionBold} />
             </div>
             {props.bookNow ?

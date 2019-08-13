@@ -31,23 +31,23 @@ const QuickLinks = (props) =>{
                 <span className="text-sukoon text-2xl font-gilroyBold block">Quick Links</span>
                 <ul className="mt-2 font-gilroyMedium">
                     <li className="text-gray-600 text-lg list-none">
-                        <Link to="/">About Us</Link></li>
+                        <Link to="/about">About Us</Link></li>
                     <li className="text-gray-600 text-lg list-none">
-                        <Link to="/">Services</Link></li>
+                        <Link to="/services">Services</Link></li>
                     <li className="text-gray-600 text-lg list-none">
-                        <Link to="/">Infrastructure</Link></li>
+                        <Link to="/infrastructure">Infrastructure</Link></li>
                     <li className="text-gray-600 text-lg list-none">
                         <Link to="/">Amenities</Link></li>
                     <li className="text-gray-600 text-lg list-none">
                         <Link to="/">Doctors</Link></li>
                     <li className="text-gray-600 text-lg list-none">
-                        <Link to="/">International Patients</Link></li>
+                        <Link to="/internationalPatient">International Patients</Link></li>
                     <li className="text-gray-600 text-lg list-none">
-                        <Link to="/">FAQs</Link></li>
+                        <Link to="/faqs">FAQs</Link></li>
                     <li className="text-gray-600 text-lg list-none">
                         <Link to="/">Blogs</Link></li>
                     <li className="text-gray-600 text-lg list-none">
-                        <Link to="/">Contacts</Link></li>
+                        <Link to="/contact">Contacts</Link></li>
                 </ul>
             </div>
         </section>
@@ -145,11 +145,9 @@ function Layout({ children }) {
             } flex-col min-h-screen text-gray-900`}
         >
           <Header toggleMenu={toggleMenu} siteTitle={data.site.siteMetadata.title} />
-
-          <main className="flex flex-col flex-1 md:justify-center max-w-4xl mx-auto md:p-8 w-full">
+          <main className="flex flex-col flex-1 justify-center max-w-4xl mx-auto w-full">
             {children}
           </main>
-
           <footer className="">
             <Banner captionLight="Book An" captionBold="Appointment"/>
             <Subscribe/>
