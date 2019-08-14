@@ -11,25 +11,39 @@ const CardContainer = styled.div`
   background-position: center center  ;
 `;
 
+const Cards = (item) =>{
+
+    return(
+        <CardContainer className={`my-2 p-3 mx-1`}>
+            <div className="bg-white">
+                <div className="p-2 px-4 w-full">
+                    <h3 className="text-xl font-bold text-sukoon block">{item.mainTitle}
+                        <span className="font-bold text-sukoon block">{item.subTitle}</span>
+                    </h3>
+                    <Para wrapperClass="my-1 py-2" width="14rem">
+                        {item.para}
+                    </Para>
+                    <ArrowButton border margin="10px 0"/>
+                </div>
+            </div>
+        </CardContainer>
+    )
+};
+
 const Carousel = (props) => {
 
     let item = props.content.map(item => {
-        return (
-            <CardContainer className={`${props.class} my-2 p-3 mx-1`}>
-                <div className="bg-white">
-                    <div className="p-2 px-4 w-full">
-                        <h3 className="text-xl font-bold text-sukoon block">{item.mainTitle}
-                            <span className="font-bold text-sukoon block">{item.subTitle}</span>
-                        </h3>
-                        <Para wrapperClass="my-1 py-2" width="14rem">
-                            {item.para}
-                        </Para>
-                        <ArrowButton border margin="10px 0"/>
-                    </div>
-                </div>
-            </CardContainer>
-        )
+
+        if(props.container){
+            return props.cardFn(item);
+        }
+        else{
+            return Cards(item);
+        }
     });
+
+
+
 
     return (
         <div className="overflow-y-hidden mt-4">
