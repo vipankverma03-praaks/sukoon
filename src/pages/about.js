@@ -17,7 +17,7 @@ const InfoSection = (props) =>{
 
   return(
       <div className={`${props.wrapperClass || ''}`}>
-        <h2 className="text-2xl text-left text-sukoon leading-none mt-2">{props.title}</h2>
+        <h3 className="text-2xl text-left text-sukoon leading-none mt-4 font-gilroyMedium">{props.title}</h3>
         <Para>{props.content}</Para>
       </div>
   )
@@ -29,7 +29,7 @@ const CareService = (props) =>{
       <section id={props.titleLight} className="p-4">
         <Title titleLight={props.titleLight} titleBold={props.titleBold} display="inline-block"/>
         <div className="flex flex-wrap overflow-x-hidden ">
-          <ServiceType className="service_content mt-2 overflow-x-hidden text-justify">
+          <ServiceType className="service_content overflow-x-hidden text-justify">
             <InfoSection content="Hennepin Healthcare's Acute Psychiatric Services (APS) center serves those in emotional
                         crisis with 24-hour, seven-day-a-week crisis counseling, assessment, and referral. More than
                         42,000 calls and drop-in visits each year are handled by the Acute Psychiatric Services

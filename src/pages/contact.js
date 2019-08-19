@@ -103,8 +103,8 @@ const CareService = (props) =>{
             <form className="ContactForm w-full">
                 <h2 className="text-sukoon text-2xl">Contact Us</h2>
                 <div className="flex w-full my-3">
-                    <input className="mx-1 w-1/2" type="text" placeholder="First Name" />
-                        <input className="mx-1 w-1/2" type="text" placeholder="Last Name" />
+                    <input className="mx-1 w-1/2 border-b border-sukoon" type="text" placeholder="First Name" />
+                        <input className="mx-1 w-1/2 border-b" type="text" placeholder="Last Name" />
                 </div>
                 <div className="flex w-full my-3">
                     <input className="mx-1 w-full" type="text" placeholder="Email Address" />

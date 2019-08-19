@@ -18,10 +18,10 @@ import Infrastructure from "../components/Infrastructure";
 
 const Caption = (props) => {
     return (
-        <div className="my-4">
-            <h2 className="text-sukoon text-lg font-gilroyRegular font-bold block">
+        <div className={`${props.wrapperClass} my-3`}>
+            <h3 className="text-sukoon text-lg font-gilroyMedium font-bold block">
                 {props.subHeading || ''}
-            </h2>
+            </h3>
             <Para>
                 {props.para || ''}
             </Para>
@@ -34,7 +34,7 @@ const WhySukoon = (props) => {
     return (
         <section id="why-sukoon" className="why-sukoon p-4">
             <Title subHeading="About" titleLight="Why" titleBold="Sukoon" />
-            <Caption subHeading="Consult best doctors"
+            <Caption wrapperClass="mt-4" subHeading="Consult best doctors"
                      para=" Get expert advice from our team of experienced doctors, led by Dr. Sameer Parikh"/>
             <Caption subHeading="Get personalised care"
                      para="Receive customised and holistic care because of our incredible 1:1 nurse to patient ratio"/>
@@ -169,7 +169,7 @@ const Blogs = (props) =>{
                 <Title subHeading="Learn" titleLight="" titleBold="Blogs"/>
                 <div className="shadow-lg mt-4">
                     <img src={BlogImg} alt="Blog"/>
-                    <div className="p-2">
+                    <div className="p-4">
                     <span className="block pt-2 text-sukoon text-xl font-normal">
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                     </span>
@@ -213,8 +213,8 @@ function IndexPage() {
             <WhySukoon/>
             <InPatientServices/>
             <OutPatientServices/>
-            <Infrastructure />
-            {/*<MeetExperts/>*/}
+            {/*<Infrastructure />*/}
+            <MeetExperts/>
             <Faqs/>
             <Blogs/>
         </Layout>
