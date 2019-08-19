@@ -1,26 +1,33 @@
-
-body h1{
-    font-weight: 800;
-    line-height: normal;
-}
-body h1 span {
-    font-weight: 300;
-    line-height: normal;
-}
+/*global css =======*/
 body h2 {
-    font-weight: 700;
+    font-size: 2.5rem !important;
     line-height: normal;
-    font-size: 6vw;
-}
-body h3 {
-    font-weight: 600;
+
+}body h3 {
+    font-size: 1.3rem !important;
     line-height: normal;
-    font-size: 5vw;
 }
 body h4 {
-    font-weight: 500;
+    font-size: 1rem !important;
     line-height: normal;
 }
+body h5 {
+    font-size: 0.5rem !important;
+    line-height: normal;
+}
+body select{
+    background-image: url(https://image.flaticon.com/icons/svg/32/32209.svg) !important;
+    -webkit-appearance: none;
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+ body h2 span {
+     display: inline-block !important;
+     line-height: normal;
+ }
+
+
 body p{
     font-weight: 400;
     line-height: normal;
@@ -29,7 +36,34 @@ body p{
 
 body{
     font-family: gilroy-regular;
+
 }
+body button:focus {
+    outline: none !important;
+}
+body select {
+    border-radius: 0px !important;
+}
+
+    /* width */
+body::-webkit-scrollbar {
+    width: 0px;
+}
+/* Track */
+body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 
 /*Fonts */
 @font-face {
@@ -149,17 +183,6 @@ body{
     right: 0;
 }
 
-
-
-
-
-.menu-open{
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-
-}
-
 .appointment-type{
     color: #12443e;
     border-bottom: 1px solid #12443e;
@@ -256,4 +279,88 @@ button.globe_btn a {
     padding:25px;
     margin:-40px 15px 40px 15px;
     box-shadow: 0px 6px 10px #00000024;
+}
+
+.menu-open span#menu-hamburger-icon span{
+    animation: scale-out-center 0.3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+.menu-open span#menu-hamburger-icon::before{
+    animation: rotate-center 0.6s ease-in-out both;
+}
+.menu-open span#menu-hamburger-icon::after{
+    animation: rotate-center_second 0.6s ease-in-out both;
+}
+
+
+.menu-open .bg-menuBg {
+    animation: fade-in-bck 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+/*animation_part========*/
+
+@-webkit-keyframes scale-out-center {
+    0% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        opacity: 0;
+        display: none;
+    }
+
+}
+
+
+@keyframes rotate-center {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+        top: 0px;
+    }
+    100% {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        top: 12px;
+    }
+}
+@keyframes rotate-center_second {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+        top: 0px;
+    }
+    100% {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        top: 12px;
+    }
+}
+
+@-webkit-keyframes fade-in-bck {
+    0% {
+        -webkit-transform: translateZ(80px);
+        transform: translateZ(80px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
+}
+@keyframes fade-in-bck {
+    0% {
+        -webkit-transform: translateZ(80px);
+        transform: translateZ(80px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        opacity: 1;
+    }
 }
