@@ -49,7 +49,7 @@ const InfoSection = (props) =>{
 
     return(
         <div className={`${props.wrapperClass || ''}`}>
-            <h2 className="text-2xl text-left text-sukoon leading-none">{props.title}</h2>
+            <h3 className="font-gilroyMedium mt-3 text-left text-sukoon leading-none">{props.title}</h3>
             <Para>
                 {props.content}</Para>
         </div>

@@ -24,10 +24,10 @@ const Title = (props) => {
     return (
         <Wrapper className={`${props.wrapperClass || ''} font-gilroyRegular`}>
             <SubheadTop>{props.subHeading || 'Explore'}</SubheadTop>
-            <HeadingWrapper className="text-sukoon text-2xl  w-full mt-2 block">
-                <HeadingLight className="font-light mr-2"
+            <HeadingWrapper className="text-sukoon text-2xl w-full mt-2 block">
+                <HeadingLight className="font-light font-gilroyRegular mr-2"
                               display={props.display}>{props.titleLight || ''}</HeadingLight>
-                <span className="text-sukoon text-2xl mr-2 w-full mt-2">
+                <span className="font-gilroyBold">
                 {props.titleBold}
                 </span>
 

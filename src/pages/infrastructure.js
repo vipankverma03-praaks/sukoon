@@ -63,23 +63,39 @@ function InfrastructurePage() {
                 </div>
             </section>
             <section className="py-4">
-                <span className="px-5 text-sukoon">OPD</span>
+
                 <div className="">
-                    <h2 className="px-5 text-2xl text-left text-sukoon leading-none">Consulting Chambers</h2>
-                    <div className="px-5 flex flex-wrap overflow-x-hidden overflow-y-hidden">
-                        <ul className="patient_services_nav flex overflow-x-scroll">
-                            <li className="mr-3 mt-3">
-                                <button className="bg-white text-sm hover:bg-gray-100 text-gray-800 font-medium py-2 w-48 text-left">Consulting Chambers</button>
-                            </li>
-                            <li className="mr-3 mt-3">
-                                <button className="bg-white text-sm hover:bg-gray-100 text-gray-800 font-medium py-2 w-48 text-left">Pharmacy</button>
-                            </li>
-                        </ul>
+                    <div className="px-5">
+                    <Title className="text-2xl text-left text-sukoon leading-none" subHeading="OPD" titleLight="Consulting " titleBold=" Chambers" />
                     </div>
-                    <div className="w-full">
-                        <img src={Chambers} alt="Sukoon Consulting Chambers"/>
+                    <div className="flex flex-wrap overflow-x-hidden overflow-y-hidden">
+                        <TabList className="patient_services_nav flex overflow-x-scroll">
+                            <li className="mt-3">
+                                <button className="bg-white active text-sm hover:bg-gray-100 text-gray-800 font-medium py-2 px-4 w-fit text-left">Rooms</button>
+                            </li>
+                            <li className="mt-3">
+                                <button className="bg-white text-sm passive hover:bg-gray-100 text-gray-800 font-medium py-2 px-4 w-fit text-left">ICU</button>
+                            </li>
+                            <li className="mt-3">
+                                <button className="bg-white text-sm passive hover:bg-gray-100 text-gray-800 font-medium py-2 px-4 w-fit text-left">Lounge</button>
+                            </li>
+                            <li className="mt-3">
+                                <button className="bg-white text-sm passive hover:bg-gray-100 text-gray-800 font-medium py-2 px-4 w-fit text-left">Dummy</button>
+                            </li>
+                            <li className="mt-3">
+                                <button className="bg-white text-sm passive hover:bg-gray-100 text-gray-800 font-medium py-2 px-4 w-fit text-left">Lorem</button>
+                            </li>
+                            <li className="mt-3">
+                                <button className="bg-white text-sm passive hover:bg-gray-100 text-gray-800 font-medium py-2 w-fit px-4 text-left">Ipsum</button>
+                            </li>
+                        </TabList>
                     </div>
-                    <Para wrapperClass="px-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis deserunt exercitationem omnis.</Para>
+                    <div>
+                        <div className="w-full">
+                            <img src={Chambers} alt="Sukoon rooms"/>
+                        </div>
+                        <Para wrapperClass="px-5 pt-5">Hi Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</Para>
+                    </div>
                 </div>
             </section>
             <section className="py-4">
@@ -88,9 +104,10 @@ function InfrastructurePage() {
                 <Details content={Content} summary="Terrace Garden"/>
             </section>
             <section className="py-4">
-                <span className="text-sukoon px-5">IPD</span>
                 <div className="">
-                    <h2 className="text-2xl px-5 text-left text-sukoon leading-none">Movie Lounge</h2>
+                    <div className="px-5">
+                    <Title className="text-2xl text-left text-sukoon leading-none" subHeading="IPD" titleLight="Movie" titleBold=" Lounge" />
+                    </div>
                     <div className="flex flex-wrap overflow-x-hidden overflow-y-hidden">
                         <TabList className="patient_services_nav flex overflow-x-scroll">
                             <li className="mt-3">
@@ -117,7 +134,7 @@ function InfrastructurePage() {
                         <div className="w-full">
                             <img src={Rooms} alt="Sukoon rooms"/>
                         </div>
-                        <Para wrapperClass="px-5">Hi Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</Para>
+                        <Para wrapperClass="px-5 pt-5">Hi Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</Para>
                     </div>
                 </div>
             </section>

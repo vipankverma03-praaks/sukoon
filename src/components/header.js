@@ -22,6 +22,9 @@ const Nav = styled.nav`
 `;
 
 const Menu = styled.span`
+
+  width: 32px;
+  height: 25px;
     
   &::before{
     top: 18px;
@@ -30,17 +33,17 @@ const Menu = styled.span`
     content: '';
     background: #12443e;
     width: 32px;
-    height: 1px;
+    height: 2px;
   }
   
   &::after{
     left: 12px;
-    top: 22px;
+    top: 23px;
     position: absolute;
     content: '';
     background: #12443e;
     width: 32px;
-    height: 1px;
+    height: 2px;
   }
 `;
 
@@ -78,8 +81,8 @@ function Header(props) {
     return (
         <Nav id="nav-bar" className="">
             <div className={`${
-                isExpanded ? `hidden` : `flex`
-                } flex-wrap items-center justify-between mx-auto p-2 pt-6`}
+                isExpanded ? `flex` : `flex`
+                } flex-wrap items-center justify-between mx-auto p-4 `}
             >
                 <div className="w-8">
                     <Link to="/" className="flex items-center no-underline ">
@@ -91,10 +94,10 @@ function Header(props) {
                         Book Appointment
                     </BookBtn>
                     <button
-                        className="block relative outline-none flex items-center px-3 pb-2 rounded text-sukoon"
+                        className="block relative outline-none flex items-center pl-3 rounded text-sukoon"
                         onClick={() => {toggleExpansion(!isExpanded);
                                                 props.toggleMenu(!isExpanded);}}>
-                        <Menu id="menu-hamburger-icon" className="text-xs font-bold">MENU</Menu>
+                        <Menu id="menu-hamburger-icon" className="text-xs font-bold"><span>MENU</span></Menu>
                     </button>
                 </div>
             </div>
@@ -103,16 +106,16 @@ function Header(props) {
                     isExpanded ? `block` : `hidden`
                     } items-center justify-between w-full h-screen bg-menuBg`}
             >
-                <div className="flex justify-between p-4">
-                    <div className="w-12">
-                        <Link to="/" className="flex items-center no-underline ">
-                            <img src={SukoonLogo} alt="Sukoon Logo"/>
-                        </Link>
-                    </div>
-                    <button onClick={() => { toggleExpansion(!isExpanded); props.toggleMenu(!isExpanded);}} className="text-sukoon outline-none mr-4 text-3xl">X</button>
-                </div>
+                {/*<div className="flex justify-between p-4">*/}
+                {/*    <div className="w-12">*/}
+                {/*        <Link to="/" className="flex items-center no-underline ">*/}
+                {/*            <img src={SukoonLogo} alt="Sukoon Logo"/>*/}
+                {/*        </Link>*/}
+                {/*    </div>*/}
+                {/*    <button onClick={() => { toggleExpansion(!isExpanded); props.toggleMenu(!isExpanded);}} className="text-sukoon outline-none mr-4 text-3xl">x</button>*/}
+                {/*</div>*/}
                 <MenuLinkWrapper className="flex flex-col">
-                    <div className="text-lg ml-6 text-sukoon flex flex-col">
+                    <div className="text-lg ml-4 text-sukoon flex flex-col">
                         <Link
                             to="/services"
                             className="inline-block mt-4 mt-0 mr-6 no-underline"
@@ -163,14 +166,14 @@ function Header(props) {
                             Contact
                         </Link>
                     </div>
-                    <div className="mt-6 flex justify-around">
+                    <div className="mx-4 mt-6 flex justify-around">
                         <div className="">
                             <img src={Call} className="w-4 inline-block" alt="Contact Sukoon"/>
-                            <span className="ml-2">+91 9876543210</span>
+                            <span className="ml-1">+91 9876543210</span>
                         </div>
                         <div className="">
                             <img src={Call} className="w-4 inline-block" alt="Contact Sukoon"/>
-                            <span className="ml-2">+91 9876543210</span>
+                            <span className="ml-1">+91 9876543210</span>
                         </div>
                     </div>
                 </MenuLinkWrapper>

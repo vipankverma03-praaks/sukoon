@@ -45,7 +45,7 @@ const ParaSection = (props) => {
 const BookNow = (props) =>{
 
     return(
-        <div className="mb-12">
+        <div className="mb-10">
             <div id="contact-info-container" className="mt-4">
                 <select name="appointment" id="appointment-type"
                         className="block py-2 bg-transparent border-b border-solid border-sukoon outline-none w-full font-medium"
@@ -57,7 +57,7 @@ const BookNow = (props) =>{
                 <input type="text" placeholder="Email / Phone"
                        className="block bg-transparent border-b border-solid border-sukoon outline-none w-full pl-1 pb-1  pt-2 text-sukoon"/>
             </div>
-            <div className="flex mt-8">
+            <div className="flex mt-6">
                     <BookBtn border bg="transparent" wrapperClass="">
                         Book Now
                     </BookBtn>
@@ -80,7 +80,7 @@ const BookNow = (props) =>{
 const Banner = (props) => {
     return (
         <Header id="header-intro" bookNow={props.bookNow} backgroundImg={props.backgroundImg} className="w-full px-4">
-            <div className="mt-8 mb-6">
+            <div className="mt-8">
                 <Heading captionLight={props.captionLight} captionBold={props.captionBold} />
             </div>
             {props.bookNow ?
